@@ -15,6 +15,38 @@
 <script src="js/modernizr.js"></script>
 
 <style type="text/css">
+#paging-wrapper{
+	width: 100%;
+	margin-top: 32px;
+	text-align: center;
+}
+#paging-wrapper li{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	margin: 5px;
+	text-align: center;
+	line-height: 30px;
+	background-color: rgba(0, 0, 0, .1);
+	border: 1px solid rgba(0, 0, 0, .3);
+	cursor: pointer;
+}
+#paging-wrapper li:hover{
+	color: white;
+	background-color: rgba(0, 0, 0, .3);
+}
+#paging-wrapper li:nth-child(1) {
+	width: 50px;
+}
+
+#paging-wrapper li:nth-child(2) {
+	width: 66px;
+}
+
+#paging-wrapper li:nth-child(3) {
+	color: white;
+	background-color: rgba(0, 0, 0, .3);
+}
 /*------中部内容 container------*/
 .container{
 	width:1200px;
@@ -283,12 +315,11 @@ function showtext(){
             <div class="carChoose">
                 <div class="chooseTitle">
 	                <h4>1号购物车</h4>
-		            <a href="#">[清空]</a>
+		            <a class="clear" href="#">[清空]</a>
                 </div>
-	            <p>金桔柠檬</p>
             </div>
             <div class="count">
-	            <p>共<span>1</span>份，总计￥<span>5</span></p>
+	            <p class="sum">共<span>1</span>份，总计￥<span>5</span></p>
 	            <button>结算</button>
             </div>
         </div>
@@ -331,120 +362,10 @@ function showtext(){
 		</div>
 		<div class="contentBox">
 		<!-- ********商家********* -->
-			<a href="shopDetail.html" class="resBox clearfix">
-				<div class="restaurantLogo">
-					<img alt="站前餐馆" src="images/resLogo.jpg">
-					<span>30分钟</span><!-- 平均送达时间 -->
-				</div>
-				<div class="resIntroduce">
-					<h3>站前餐馆</h3>
-					<div class="starrating"><!-- 评级 -->
-					   <span class="star"></span>
-					</div>
-					<span class="sale">月售2000单</span>
-					<p>免配送费</p>
-				</div>
-			</a>
-			<a href="#" class="clearfix">
-				<div class="restaurantLogo">
-					<img alt="站前餐馆" src="images/resLogo.jpg">
-					<span>30分钟</span><!-- 平均送达时间 -->
-				</div>
-				<div class="resIntroduce">
-					<h3>站前餐馆</h3>
-					<div class="starrating"><!-- 评级 -->
-					   <span class="star"></span>
-					</div>
-					<span class="sale">月售2000单</span>
-					<p>免配送费</p>
-				</div>
-			</a>
-			<a href="#" class="clearfix">
-				<div class="restaurantLogo">
-					<img alt="站前餐馆" src="images/resLogo.jpg">
-					<span>30分钟</span><!-- 平均送达时间 -->
-				</div>
-				<div class="resIntroduce">
-					<h3>站前餐馆</h3>
-					<div class="starrating"><!-- 评级 -->
-					   <span class="star"></span>
-					</div>
-					<span class="sale">月售2000单</span>
-					<p>免配送费</p>
-				</div>
-			</a>
-			<a href="#" class="clearfix">
-				<div class="restaurantLogo">
-					<img alt="站前餐馆" src="images/resLogo.jpg">
-					<span>30分钟</span><!-- 平均送达时间 -->
-				</div>
-				<div class="resIntroduce">
-					<h3>站前餐馆</h3>
-					<div class="starrating"><!-- 评级 -->
-					   <span class="star"></span>
-					</div>
-					<span class="sale">月售2000单</span>
-					<p>免配送费</p>
-				</div>
-			</a>
-			<a href="#" class="clearfix">
-				<div class="restaurantLogo">
-					<img alt="站前餐馆" src="images/resLogo.jpg">
-					<span>30分钟</span><!-- 平均送达时间 -->
-				</div>
-				<div class="resIntroduce">
-					<h3>站前餐馆</h3>
-					<div class="starrating"><!-- 评级 -->
-					   <span class="star"></span>
-					</div>
-					<span class="sale">月售2000单</span>
-					<p>免配送费</p>
-				</div>
-			</a>
-			<a href="#" class="clearfix">
-				<div class="restaurantLogo">
-					<img alt="站前餐馆" src="images/resLogo.jpg">
-					<span>30分钟</span><!-- 平均送达时间 -->
-				</div>
-				<div class="resIntroduce">
-					<h3>站前餐馆</h3>
-					<div class="starrating"><!-- 评级 -->
-					   <span class="star"></span>
-					</div>
-					<span class="sale">月售2000单</span>
-					<p>免配送费</p>
-				</div>
-			</a>
-			<a href="#" class="clearfix">
-				<div class="restaurantLogo">
-					<img alt="站前餐馆" src="images/resLogo.jpg">
-					<span>30分钟</span><!-- 平均送达时间 -->
-				</div>
-				<div class="resIntroduce">
-					<h3>站前餐馆</h3>
-					<div class="starrating"><!-- 评级 -->
-					   <span class="star"></span>
-					</div>
-					<span class="sale">月售2000单</span>
-					<p>免配送费</p>
-				</div>
-			</a>
-			<a href="#" class="clearfix">
-				<div class="restaurantLogo">
-					<img alt="站前餐馆" src="images/resLogo.jpg">
-					<span>30分钟</span><!-- 平均送达时间 -->
-				</div>
-				<div class="resIntroduce">
-					<h3>站前餐馆</h3>
-					<div class="starrating"><!-- 评级 -->
-					   <span class="star"></span>
-					</div>
-					<span class="sale">月售2000单</span>
-					<p>免配送费</p>
-				</div>
-			</a>
+			
 		</div><!-- *********商家结束********** -->
 	</div>
+	<ul id="paging-wrapper"></ul>
 <!-- footer 页脚 -->
 	<div class="footer clearfix">
 		<div class="footerLinks help">
@@ -489,10 +410,151 @@ function showtext(){
 		</div>
 	</div>
 	<!-- 页脚结束 -->
-    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
-    <script>
-    window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>');
-    </script>
+    <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/sidebar.js"></script>
+    <script src="js/JqueryPaging-1.0.js"></script>
+    <script>
+    (function(){
+    	
+    	
+    	//获取购物车里的数据
+    	$.ajax({
+            type: "post",
+            url: 'PHP/api.php',
+            dataType: 'json',
+            data: {status:"shopcart",type:"get"},
+            success: function (data) {
+            	console.log(data)
+            	var sum = 0,
+            		html = ""
+            	for(var i = 0;i<data.length;i++){
+            		sum += parseInt(data[i].price)
+            		html += "<p>" + data[i].name + "</p>"
+            	}
+            	 
+    			$(".chooseTitle").append(html)		
+           html = "共<span>" + data.length + "</span>份，总计￥<span>" + sum + "</span>"
+    		$(".sum").html(html)
+            },
+            error: function () {
+               console.log("error")
+            }
+        })
+    	
+    	//清除购物车里的数据
+		$(".clear").on("click",function(){
+			$.ajax({
+		        type: "post",
+		        url: 'PHP/api.php',
+		        dataType: 'json',
+		        data: {status:"shopcart",type:"delete"},
+		        success: function (data) {
+		        	if(data['state']){
+		        		$(".chooseTitle").html("")	
+		        		var html = "共<span>" +0+ "</span>份，总计￥<span>" + 0+ "</span>"
+			$(".sum").html(html)
+		        }
+		        },
+		        error: function () {
+		           console.log("error")
+		        }
+		    })
+		})
+    	
+    	 	
+        //首页商家分类
+        var navClassify = $("#classify a")
+        navClassify.on("click",function(){
+        	var _index = $(this).index() - 1,
+        		_data = {}
+        	console.log(_index)
+        	
+        	
+        	if(_index === 0){
+        		_data = {
+        				status:"index",
+        				currentPage:1	
+        		}
+        	}else{
+        		_data = {
+        				status:"index",
+        				type:_index,
+        				currentPage:1
+        		}
+        	}
+        	
+        	$.ajax({
+                type: "post",
+                url: 'PHP/api.php',
+                dataType: 'json',
+                data: _data,
+                success: function (data) {
+        			console.log(data)
+        			var html = "";
+        			console.log(data.length)
+                   for(var i = 0;i <data.length - 1;i++){
+        				html += "<a href='PHP/api.php?status=indextoshop&id="+data[i].shop_id+"'"+
+        								"class='resBox clearfix'>"+
+        								"<div class='restaurantLogo'>"+
+        								"<img alt='"+data[i].shop_name+"' src='"+data[i].shop_img_path+"'>"+
+        								"<span>30分钟</span>"+
+        								"</div>"+
+        								"<div class='resIntroduce'>"+
+        								"<h3>"+data[i].shop_name+"</h3>"+
+        								"<div class='starrating'>"+
+        								"<span class='star'></span>"+
+        								"</div>"+
+        								"<span class='sale'>月售"+data[i].shop_sales+"</span>"
+        			   	if(data[i].shop_delivery_cost === "0"){
+        								html +="<p>免配送费</p>"
+        						}else{
+        					html +="<p>配送费￥"+data[i].shop_delivery_cost+"</p>"
+        						}
+        								html +="</div></a>"
+                   }
+                   $('.contentBox').html(html)
+                   //配置数据
+                   var option = {
+                       id: '#paging-wrapper',
+                       pages: Math.ceil(data[data.length -1] / 8), //总页数
+                       displayPage: 3, //只显示多少页
+                       data:_data,
+                       drawHtml:function(data){
+                    	   var html = "";
+                           for(var i = 0;i <data.length - 1;i++){
+	               				html += "<a href='PHP/api.php?status=indextoshop&id="+data[i].shop_id+"'"+
+	               								"class='resBox clearfix'>"+
+	               								"<div class='restaurantLogo'>"+
+	               								"<img alt='"+data[i].shop_name+"' src='"+data[i].shop_img_path+"'>"+
+	               								"<span>30分钟</span>"+
+	               								"</div>"+
+	               								"<div class='resIntroduce'>"+
+	               								"<h3>"+data[i].shop_name+"</h3>"+
+	               								"<div class='starrating'>"+
+	               								"<span class='star'></span>"+
+	               								"</div>"+
+	               								"<span class='sale'>月售"+data[i].shop_sales+"</span>"
+		               			   	if(data[i].shop_delivery_cost === "0"){
+		               								html +="<p>免配送费</p>"
+		               						}else{
+		               					html +="<p>配送费￥"+data[i].shop_delivery_cost+"</p>"
+		               						}
+		               								html +="</div></a>"
+	                          }
+                          $('.contentBox').html(html)
+                       }
+                   }
+                   //调用分页插件
+                   new Paging(option)
+                },
+                error: function () {
+                   console.log("error")
+                }
+            })
+        })
+        navClassify[0].click()
+        
+    })()
+    </script>
 </body>
 </html>

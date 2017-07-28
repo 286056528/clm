@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>吃了么_订单</title>
+<link type="text/css" rel="stylesheet" href="css/main.css">
+<link rel="shortcut icon" href="favicon.ico">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="shortcut icon" href="favicon.ico">
+<script src="js/jquery-3.2.1.min.js"></script>
+<style type="text/css">
+.container{
+	margin-top:50px;
+	min-width:980px;
+}
+.order_page{
+	width:980px;
+	margin:0px auto;
+	position:relative;
+}
+.order_page .view_list{
+	display:inline-block;
+	width:170px;
+	height:550px;
+	padding-top:50px;
+	background:white;
+}
+.view_list .list_nav{
+	width:170px;
+	height:50px;
+}
+.view_list .list_nav:hover{
+	cursor:pointer;
+	background:#1e89e0;
+}
+.view_list .list_nav b{
+	display:inline-block;
+	width:30px;
+	height:30px;
+	margin-top:10px;
+	margin-left:20px;
+	border-radius:100px;
+}
+.view_list .list_nav .order_img{
+	background:url(images/order.png) no-repeat;
+}
+.view_list .list_nav .account_img{
+	background:url(images/account.png) no-repeat;
+}
+.view_list .list_nav .collect_img{
+	background:url(images/order.png) no-repeat;
+}
+
+.view_list .list_nav span{
+	display:inline-block;
+	position:relative;
+	top:-10px;
+	left:5px;
+	width:80px;
+	height:30px;
+	font-size:14px;
+	font-weight:600;
+	line-height:30px;
+}
+.view_list .list_nav span:hover{
+	color:white;
+}
+
+
+.order_page .order_list{
+	display:inline-block;
+	float:right;
+	width:800px;
+	min-height:600px;
+	margin-bottom:50px;
+	background:white;
+}
+.order_page .order_list .order_list_top{
+	width:100%;
+	height:50px;
+	border-bottom:1px solid #eee;
+}
+.order_list .order_list_top span{
+	display:inline-block;
+	height:50px;
+	line-height:50px;
+	font-size:14px;
+	color:#6d6d6d;
+}
+.order_list .order_list_top .content_top{
+	width:420px;
+	margin-left:20px;
+}
+.order_list .order_list_top .phone_top{
+	width:130px;
+}
+.order_list .order_list_top .payment_top{
+	width:70px;
+}
+.order_list .order_list_top .operate_top{
+	width:100px;
+	text-align:center;
+}
+.order_page .order_list .order_list_note{
+	width:100%;
+	height:111px;
+}
+.order_page .order_list .order_list_note:hover{
+	cursor:pointer;
+	background:#fcfcfc;
+}
+.order_list .order_list_note .note_main{
+	width:760px;
+	height:110px;
+	margin-left:20px;
+	position:relative;
+	border-bottom:1px dashed #ddd;
+}
+.note_main .content,.phone,.payment{
+	float:left;
+	height:110px;
+	margin-right:5px;
+	line-height:110px;
+}
+.note_main .content{
+	width:420px;
+}
+.note_main .content b{
+	float:left;
+	width:80px;
+	height:80px;
+	margin-top:15px;
+	border:1px solid #ddd;
+}
+.note_main .content .restarant{
+	float:left;
+	width:300px;
+	height:80px;
+	margin-left:10px;
+	margin-top:15px;
+}
+.restarant .restname{
+	width:300px;
+	height:40px;
+	text-indent:20px;
+	font-weight:700;
+	line-height:40px;
+}
+.restarant .restmes{
+	width:300px;
+	height:40px;
+	line-height:40px;
+}
+.restarant .restmes .order_time,.order_number{
+	display:inline-block;
+	font-size:12px;
+}
+.restarant .restmes .order_time{
+	width:120px;
+}
+.restarant .restmes .order_number{
+	width:170px;
+}
+.note_main .phone{
+	font-size:14px;
+	width:130px;
+}
+.note_main .payment{
+	font-size:18px;
+	font-weight:500;
+	width:70px;
+}
+.note_main .operate{
+	width:80px;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	font-size:14px;
+	position:absolute;
+	top:40px;
+	right:20px;
+	border:1px solid #ddd;
+	border-radius:3px;
+}
+.note_main .operate:hover{
+	border:none;
+	background:#1e89e0;
+	color:white;
+	cursor:pointer;
+}
+.order_list .estimate_list{
+	width:750px;
+	position:relative;
+	margin:0px auto;
+	border:1px solid #ddd;
+}
+.order_list .estimate_list .order_main{
+	width:350px;
+	min-height:330px;
+	border-right:1px solid #ddd;
+}
+.estimate_list p{
+	width:100%;
+	height:60px;
+	line-height:60px;
+	color:#6d6d6d;
+	text-indent:20px;
+	font-weight:600;
+	font-size:15px;
+}
+.estimate_list .order_main .dish_list{
+	width:310px;
+	height:30px;
+	margin:0px auto;
+	line-height:30px;
+	font-size:14px;
+}
+.order_main .dish_list .name{
+	display:inline-block;
+	width:180px;
+}
+.order_main .dish_list .number{
+	display:inline-block;
+	width:30px;
+}
+.order_main .dish_list .price{
+	display:inline-block;
+	width:70px;
+}
+.estimate_list .order_main .real_list{
+	width:310px;
+	height:80px;
+	margin:20px auto;
+	line-height:80px;
+	text-align:right;
+	font-size:14px;
+	border-top:1px dashed #ddd;
+}
+.real_list .real_pay{
+	font-size:24px;
+	font-weight:600;
+	color:#1e89e0;
+}
+.order_list .estimate_list .estimate_main{
+	position:absolute;
+	top:0px;
+	right:0px;
+	width:400px;
+}
+.estimate_main .estimate_level{
+	width:360px;
+	height:50px;
+	margin:0px auto;
+	line-height:50px;
+}
+.estimate_main span{
+	display:inline-block;
+	font-size:15px;
+	font-weight:600;
+	color:#6d6d6d;
+}
+.estimate_main .estimate_level .A,.B,.C{
+	display:inline-block;
+	width:60px;
+	height:30px;
+	text-align:center;
+	font-size:15px;
+}
+.estimate_main .estimate_level .A:hover,.B:hover,.C:hover{
+	cursor:pointer;
+}
+.estimate_main .estimate_text{
+	width:360px;
+	height:160px;
+	margin:0px auto;
+}
+.estimate_main .estimate{
+	width:360px;
+	height:120px;
+	font-size:14px;
+	resize:none;
+}
+.estimate_main .btnEstimate{
+	width:100px;
+	height:30px;
+	line-height:30px;
+	margin:0px auto;
+	font-size:15px;
+	font-weight:600;
+	color:white;
+	text-align:center;
+	background:#46a3ff;
+	border-radius:5px;
+}
+.estimate_main .btnEstimate:hover{
+	cursor:pointer;
+	background:#1e89e0;
+}
+.estimate_main .estimate_show{
+	display:none;
+}
+.ABC{
+	color:#1e89e0;
+}
+.order_page .account_list,.collect_list{
+	display:none;
+	width:800px;
+	height:600px;
+	position:absolute;
+	top:0px;
+	right:0px;
+	background:white;
+}
+.user_list .user_icon{
+	width:720px;
+	height:100px;
+	margin:0px auto;
+	margin-top:50px;
+}
+.user_list .user_icon span{
+	display:inline-block;
+	width:100px;
+	height:30px;
+	position:relative;
+	left:0px;
+	top:-45px;
+	line-height:30px;
+}
+.user_list .user_icon b{
+	display:inline-block;
+	width:100px;
+	height:100px;
+	border-radius:100px;
+	border:1px solid #eee;
+}
+.user_list .user_name,.user_phone{
+	width:720px;
+	height:50px;
+	line-height:50px;
+	margin:0px auto;
+}
+.user_list .username,.userphone{
+	color:black;
+	font-weight:500;
+	margin-left:20px;
+}
+.btnUser{
+	width:80px;
+	height:30px;
+	line-height:30px;
+	margin-top:30px;
+	margin-left:100px;
+	font-size:15px;
+	color:white;
+	text-align:center;
+	background:#46a3ff;
+	border-radius:5px;
+}
+.btnUser:hover{
+	cursor:pointer;
+	background:#1e89e0;
+}
+.account_list .repwd_list{
+	display:none;
+	width:720px;
+	margin:0px auto;
+	margin-top:50px;
+}
+.repwd_list span{
+	display:inline-block;
+	width:80px;
+	height:40px;
+	line-height:40px;
+}
+.repwd_list input{
+	width:220px;
+	height:30px;
+	text-indent:10px;
+	border:1px solid #46a3ff;
+}
+.btnSure,.btnCancel{
+	display:inline-block;
+	width:80px;
+	height:30px;
+	line-height:30px;
+	margin-top:30px;
+	margin-left:40px;
+	font-size:15px;
+	color:white;
+	text-align:center;
+	background:#46a3ff;
+	border-radius:5px;
+}
+.btnSure:hover,.btnCancel:hover{
+	cursor:pointer;
+	background:#1e89e0;
+}
+.onb{
+	background:#1e89e0;
+}
+.onc{
+	color:white;
+}
+</style>
+<script type="text/javascript">
+$().ready(function(){
+	$(".order_nav").addClass("onb");
+	$(".s1").addClass("onc");
+	$(".order_nav").click(function(){
+		$(".order_list").show();
+		$(".account_list").hide();
+		$(".collect_list").hide();
+		$(".order_nav").addClass("onb");
+		$(".account_nav").removeClass("onb");
+		$(".collect_nav").removeClass("onb");
+		$(".s1").addClass("onc");
+		$(".s2").removeClass("onc");
+		$(".s3").removeClass("onc");
+	});
+	$(".account_nav").click(function(){
+		$(".order_list").hide();
+		$(".account_list").show();
+		$(".collect_list").hide();
+		$(".order_nav").removeClass("onb");
+		$(".account_nav").addClass("onb");
+		$(".collect_nav").removeClass("onb");
+		$(".s1").removeClass("onc");
+		$(".s2").addClass("onc");
+		$(".s3").removeClass("onc");
+	});
+	$(".collect_nav").click(function(){
+		$(".order_list").hide();
+		$(".account_list").hide();
+		$(".collect_list").show();
+		$(".order_nav").removeClass("onb");
+		$(".account_nav").removeClass("onb");
+		$(".collect_nav").addClass("onb");
+		$(".s1").removeClass("onc");
+		$(".s2").removeClass("onc");
+		$(".s3").addClass("onc");
+	});
+	$(".order_list_note").click(function(){
+		$(".estimate_list").toggle();
+	});
+	$(".btnEstimate").click(function(){
+		$(".estimate_list").hide();
+		$(".estimate_confirm").hide();
+		$(".estimate_show").show();
+	});
+	$(".A").addClass("ABC");
+	$(".A").click(function(){
+		$(".A").addClass("ABC");
+		$(".B").removeClass("ABC");
+		$(".C").removeClass("ABC");
+	});
+	$(".B").click(function(){
+		$(".B").addClass("ABC");
+		$(".A").removeClass("ABC");
+		$(".C").removeClass("ABC");
+	});
+	$(".C").click(function(){
+		$(".C").addClass("ABC");
+		$(".A").removeClass("ABC");
+		$(".B").removeClass("ABC");
+	});
+	$(".btnUser").click(function(){
+		$(".repwd_list").show();
+		$(".user_list").hide();
+	});
+	$(".btnSure").click(function(){
+		$(".repwd_list").hide();
+		$(".user_list").show();
+	});
+	$(".btnCancel").click(function(){
+		$(".repwd_list").hide();
+		$(".user_list").show();
+	});
+});
+</script>
+</head>
+<body>
+<div class="topBar clearfix">
+	<h1 class="topBarLogo"><b></b>吃了么</h1>
+	<div class="topBarList">
+		<a href="index.html" class="homePage">首页</a>
+		<a href="#">我的订单</a>
+		<a href="#">加盟合作</a>
+	</div>
+	<nav class="topBarNav">
+		<a href="#"><i class="fa fa-user-o"></i>服务中心</a>
+		<a href="#">规则中心</a>
+		<a href="#"><i class="fa fa-mobile"></i>手机应用</a>
+	</nav>
+	<div class="topBarNavLogin">
+		<a href="#"><i class="fa fa-user"></i>登录/注册</a>
+	</div>
+</div>
+<div class="container">
+	<div class="order_page">
+		<div class="view_list">
+			<div class="list_nav order_nav"><b class="order_img"></b><span class="s1">三个月订单</span></div>
+			<div class="list_nav account_nav"><b class="account_img"></b><span class="s2">我的账号</span></div>
+			<div class="list_nav collect_nav"><b class="collect_img"></b><span class="s3">我的收藏</span></div>
+		</div>
+		<div class="order_list">
+			<div class="order_list_top">
+				<span class="content_top">订单内容</span>
+				<span class="phone_top">商家电话</span>
+				<span class="payment_top">支付金额</span>
+				<span class="operate_top">操作</span>
+			</div>
+			<div class="order_list_note">
+				<div class="note_main">
+					<div class="content">
+						<b></b>
+						<div class="restarant">
+							<div class="restname">天天快餐</div>
+							<div class="restmes">
+								<div class="order_time">2017-07-24 16:50:30</div>
+								<div class="order_number"><span>订单号:</span>1234567890</div>
+							</div>
+						</div>
+					</div>
+					<div class="phone">1234567890*</div>
+					<div class="payment">￥<span class="pmp">25.00</span></div>
+					<div class="operate">删除订单</div>
+				</div>
+			</div>
+			<div class="estimate_list">
+				<div class="order_main">
+					<p>订单详情</p>
+					<div class="dish_list">
+						<span class="name">小鸡炖蘑菇</span>
+						<span class="number">1</span>
+						￥<span class="price">25.00</span>
+					</div>
+					<div class="real_list">
+						<div class="real">实际支付：￥<span class="real_pay">25.00</span></div>
+					</div>
+				</div>
+				<div class="estimate_main">
+					<div class="estimate_confirm">
+						<p>我的评价</p>
+						<div class="estimate_level">
+							<span>总体评价</span>
+							<a class="A">好评</a>
+							<a class="B">中评</a>
+							<a class="C">差评</a>
+						</div>
+						<div class="estimate_text">
+							<span>补充评价</span>
+							<textarea class="estimate"></textarea>
+						</div>
+						<div class="btnEstimate">确认订单</div>
+					</div>
+					<div class="estimate_show">
+						<p>我的评价</p>
+						<div class="estimate_level">
+							<span>总体评价</span>
+							<a class="estimate_a">好评</a>
+						</div>
+						<div class="estimate_text">
+							<span>补充评价</span>
+							<a class="estimate_e">好评</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="account_list">
+			<div class="user_list">
+				<div class="user_icon"><span>头&nbsp;&nbsp;&nbsp;&nbsp;像：</span><b></b></div>
+				<div class="user_name">用户名称：<span class="username">111</span></div>
+				<div class="user_phone">手机号码：<span class="userphone">111</span></div>
+				<div class="btnUser">修改密码</div>
+			</div>
+			<div class="repwd_list">
+				<div class="op_list">
+					<span>旧密码</span>
+					<input class="op" type="password" value="" placeholder="请输入旧密码" />
+					<i class="pro"></i>
+				</div>
+				<div class="np_list">
+					<span>新密码</span>
+					<input class="np" type="password" value="" placeholder="请输入新密码" />
+					<i class="pro"></i>
+				</div>
+				<div class="cp_list">
+					<span>确认密码</span>
+					<input class="cp" type="password" value="" placeholder="请确认新密码" />
+					<i class="pro"></i>
+				</div>
+				<div class="btnSure">确定</div>
+				<div class="btnCancel">取消</div>
+			</div>
+		</div>
+		<div class="collect_list">
+			
+		</div>
+	</div>
+</div>
+<div class="footer clearfix">
+	<div class="footerLinks help">
+		<h3 class="linksTitle">用户帮助</h3>
+		<a href="#">服务中心</a>
+		<a href="#">常见问题</a>
+	</div>
+	<div class="footerLinks cooperation">
+		<h3 class="linksTitle">商务合作</h3>
+		<a href="#">我要开店</a>
+		<a href="#">加盟指南</a>
+		<a href="#">市场合作</a>
+		<a href="#">开放平台</a>
+	</div>
+	<div class="footerLinks about">
+		<h3 class="linksTitle">关于我们</h3>
+		<a href="#">吃了么介绍</a>
+		<a href="#">加入我们</a>
+		<a href="#">联系我们</a>
+		<a href="#">规则中心</a>
+	</div>
+	<div class="footerContect">
+		<ul>
+			<li>24小时客服热线：<a>1234567</a></li>
+			<li>意见反馈：<a>12345@163.com</a></li>
+			<li>
+				关注我们：
+				<a href="#"><i class="fa fa-qq"></i></a>
+				<a href="#"><i class="fa fa-facebook"></i></a>
+			</li>
+		</ul>
+	</div>
+	<div class="footerQrCode clearfix">
+		<a href="#"><img src="http://faas.elemecdn.com/desktop/media/img/appqc.95e532.png"></a>
+		<div class="qrCodeRight">
+			<h3>下载手机版</h3>
+			<p>扫一扫，手机订餐更方便</p>
+		</div>
+	</div>
+	<div class="footerCopyRight">
+		技术支持Team.S&nbsp;&nbsp;copyright&copy&nbsp;2004-2017&nbsp;&nbsp;Team.S 版权所有
+	</div>
+</div>
+</body>
+</html>
