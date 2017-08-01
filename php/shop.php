@@ -12,6 +12,23 @@ class Shop{
     public $shop_opening_hours = "";  //商铺营业时间
     public $shop_announcement = "";  //商铺公告
     public $shop_kind_food = "";  //商铺所卖食物的种类
+    public $shop_phone = "";  //商铺手机号
+
+/**
+     * @return the $shop_phone
+     */
+    public function getShop_phone()
+    {
+        return $this->shop_phone;
+    }
+
+ /**
+     * @param string $shop_phone
+     */
+    public function setShop_phone($shop_phone)
+    {
+        $this->shop_phone = $shop_phone;
+    }
 
 public function getShop_kind_food()
     {

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +18,19 @@
 <script src="js/modernizr.js"></script>
 
 <style type="text/css">
+
+.logout{
+	position:absolute;
+	display:none;
+	top:44px;
+	right:123px;
+	width:53px;
+	height:50px;
+	text-align:center;
+	background-color:#1e89e0;
+	color:white;
+	cursor:pointer;
+}
 #paging-wrapper{
 	width: 100%;
 	margin-top: 32px;
@@ -172,6 +188,9 @@
 .resIntroduce h3:hover{
 	color:#0089dc;
 }
+.resIntroduce .sale{
+	padding-left:10px;
+}
 .resIntroduce .sale,.resIntroduce p{
 	color:#999;
 	font-size: 14px;
@@ -195,24 +214,15 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-.starrating span:before, .starrating:before {
-    content: "\e950\e950\e950\e950\e950";
+
+.starrating  b{
+	float: left;
+	width: 14px;
+	height: 11px;
+	background: url(images/starss.png) 0 -11px no-repeat;
 }
-.star{
-	font-family: eleme;
-    speak: none;
-    font-style: normal;
-    font-weight: 400;
-    -webkit-font-feature-settings: normal;
-    font-feature-settings: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-.star:before {
-    content: "\e950";
+.starrating  .starnum{
+	background: url(images/starss.png) 0 0px no-repeat;
 }
 .starrating span {
     position: absolute;
@@ -263,8 +273,8 @@ function showtext(){
 	<div class="topBar clearfix">
 		<h1 class="topBarLogo"><b></b>吃了么</h1>
 		<div class="topBarList" id="topBarList">
-			<a href="index.html" class="change">首页</a>
-			<a href="order.html">我的订单</a>
+			<a href="index.php" class="change">首页</a>
+			<a href="order.php">我的订单</a>
 			<a href="#">加盟合作</a>
 		</div>
 		<nav class="topBarNav">
@@ -273,7 +283,14 @@ function showtext(){
 			<a href="#"><i class="fa fa-mobile"></i>手机应用</a>
 		</nav>
 		<div class="topBarNavLogin">
+		<?php if(empty($_SESSION['userId'])){?>
 			   <a href="login.html"><i class="fa fa-user"></i>登录/注册</a>
+			   <?php }else{?>
+			    <div class='logname'>
+			      <a  href="order.php"><i class="fa fa-user"></i><?php echo $_SESSION['name'] ?></a>
+			     <span class="logout">退出</span>
+			   </div>
+			   <?php }?>
 		</div>
 	</div>
 <!-- sidebar 侧边栏 -->
@@ -316,11 +333,12 @@ function showtext(){
                 <div class="chooseTitle">
 	                <h4>1号购物车</h4>
 		            <a class="clear" href="#">[清空]</a>
+		            <div class="content"></div>
                 </div>
             </div>
             <div class="count">
 	            <p class="sum">共<span>1</span>份，总计￥<span>5</span></p>
-	            <button>结算</button>
+	            <button class="payment">结算</button>
             </div>
         </div>
     </div>
@@ -416,8 +434,31 @@ function showtext(){
     <script>
     (function(){
     	
+    	//结算
+    	$('.payment').on("click",function(){
+    		$.ajax({
+    	        type: "post",
+    	        url: 'PHP/api.php',
+    	        dataType: 'json',
+    	        data: {status:"payment"},
+    	        success: function (data) {
+    	        	if(data['status'] === 2){
+    	        		alert("请登录后再结算！")
+    	        		window.location.href = "login.html";
+    	        	}else if(data['status'] === 3){
+    	        		alert("购物是空的哦，快去选购一些食物吧！")
+    	        	}else if(data['status'] === 1){
+	        	    window.location.href = "order.php"
+		        	}
+    	        },
+    	        error: function () {
+    	           console.log("error")
+    	        }
+    	    })
+    	})
     	
     	//获取购物车里的数据
+    	var sum = 0
     	$.ajax({
             type: "post",
             url: 'PHP/api.php',
@@ -425,14 +466,14 @@ function showtext(){
             data: {status:"shopcart",type:"get"},
             success: function (data) {
             	console.log(data)
-            	var sum = 0,
+            	
             		html = ""
             	for(var i = 0;i<data.length;i++){
             		sum += parseInt(data[i].price)
             		html += "<p>" + data[i].name + "</p>"
             	}
             	 
-    			$(".chooseTitle").append(html)		
+    			$(".content").html(html)		
            html = "共<span>" + data.length + "</span>份，总计￥<span>" + sum + "</span>"
     		$(".sum").html(html)
             },
@@ -450,7 +491,8 @@ function showtext(){
 		        data: {status:"shopcart",type:"delete"},
 		        success: function (data) {
 		        	if(data['state']){
-		        		$(".chooseTitle").html("")	
+		        		$(".content").html("")	
+		        		sum = 0
 		        		var html = "共<span>" +0+ "</span>份，总计￥<span>" + 0+ "</span>"
 			$(".sum").html(html)
 		        }
@@ -501,10 +543,24 @@ function showtext(){
         								"</div>"+
         								"<div class='resIntroduce'>"+
         								"<h3>"+data[i].shop_name+"</h3>"+
-        								"<div class='starrating'>"+
-        								"<span class='star'></span>"+
-        								"</div>"+
-        								"<span class='sale'>月售"+data[i].shop_sales+"</span>"
+        								"<div class='starrating'>"
+        							     var _starnum = 0
+        							    if(data[i].shop_rating_count === 5){
+        							        _starnum = 5
+            							    }else{
+            							        _starnum = Math.ceil(data[i].shop_rating_count/data[i].shop_sales)
+                							    }
+
+        			                    for(var j = 0;j <5;j++){
+            			                    if(j<_starnum){
+          			                    	   html += "<b class='starnum'></b>"
+            			                        }else{
+            			                        	html += "<b></b>"
+                			                        }
+            			                    } 
+        								
+        							html +="</div>"+
+        								"<span class='sale'>总售"+data[i].shop_sales+"</span>"
         			   	if(data[i].shop_delivery_cost === "0"){
         								html +="<p>免配送费</p>"
         						}else{
@@ -522,24 +578,38 @@ function showtext(){
                        drawHtml:function(data){
                     	   var html = "";
                            for(var i = 0;i <data.length - 1;i++){
-	               				html += "<a href='PHP/api.php?status=indextoshop&id="+data[i].shop_id+"'"+
-	               								"class='resBox clearfix'>"+
-	               								"<div class='restaurantLogo'>"+
-	               								"<img alt='"+data[i].shop_name+"' src='"+data[i].shop_img_path+"'>"+
-	               								"<span>30分钟</span>"+
-	               								"</div>"+
-	               								"<div class='resIntroduce'>"+
-	               								"<h3>"+data[i].shop_name+"</h3>"+
-	               								"<div class='starrating'>"+
-	               								"<span class='star'></span>"+
-	               								"</div>"+
-	               								"<span class='sale'>月售"+data[i].shop_sales+"</span>"
-		               			   	if(data[i].shop_delivery_cost === "0"){
-		               								html +="<p>免配送费</p>"
-		               						}else{
-		               					html +="<p>配送费￥"+data[i].shop_delivery_cost+"</p>"
-		               						}
-		               								html +="</div></a>"
+                        	   html += "<a href='PHP/api.php?status=indextoshop&id="+data[i].shop_id+"'"+
+								"class='resBox clearfix'>"+
+								"<div class='restaurantLogo'>"+
+								"<img alt='"+data[i].shop_name+"' src='"+data[i].shop_img_path+"'>"+
+								"<span>30分钟</span>"+
+								"</div>"+
+								"<div class='resIntroduce'>"+
+								"<h3>"+data[i].shop_name+"</h3>"+
+								"<div class='starrating'>"
+							     var _starnum = 0
+							    if(data[i].shop_rating_count === 5){
+							        _starnum = 5
+  							    }else{
+  							        _starnum = Math.ceil(data[i].shop_rating_count/data[i].shop_sales)
+      							    }
+
+			                    for(var j = 0;j <5;j++){
+  			                    if(j<_starnum){
+			                    	   html += "<b class='starnum'></b>"
+  			                        }else{
+  			                        	html += "<b></b>"
+      			                        }
+  			                    } 
+								
+							html +="</div>"+
+								"<span class='sale'>总售"+data[i].shop_sales+"</span>"
+			   	if(data[i].shop_delivery_cost === "0"){
+								html +="<p>免配送费</p>"
+						}else{
+					html +="<p>配送费￥"+data[i].shop_delivery_cost+"</p>"
+						}
+								html +="</div></a>"
 	                          }
                           $('.contentBox').html(html)
                        }
@@ -553,6 +623,30 @@ function showtext(){
             })
         })
         navClassify[0].click()
+
+
+        $('.logname').on("mouseover",function(){
+		$('.logout').css("display","inline-block");
+		$('.logout').on("click",function(){
+			$.ajax({
+		        type: "post",
+		        url: 'PHP/api.php',
+		        dataType: 'json',
+		        data: {status:"logout"},
+		        success: function (data) {
+		        	if(data['status'] === 1){
+	        		    window.location.href = "index.php"
+		        	  }
+		        },
+		        error: function () {
+		           console.log("error")
+		        }
+		    })
+		});
+
+	  }).on("mouseout",function(){
+		  $('.logout').css("display","none");
+		  })
         
     })()
     </script>

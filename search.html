@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width">
+<title>吃了么_首页</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+<link type="text/css" rel="stylesheet" href="css/main.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap-theme.css">
+<link rel="shortcut icon" href="favicon.ico">
+<script src="js/modernizr.js"></script>
+
+<style type="text/css">
+
+.logout{
+	position:absolute;
+	display:none;
+	top:44px;
+	right:123px;
+	width:53px;
+	height:50px;
+	text-align:center;
+	background-color:#1e89e0;
+	color:white;
+	cursor:pointer;
+}
+#paging-wrapper{
+	width: 100%;
+	margin-top: 32px;
+	text-align: center;
+}
+#paging-wrapper li{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	margin: 5px;
+	text-align: center;
+	line-height: 30px;
+	background-color: rgba(0, 0, 0, .1);
+	border: 1px solid rgba(0, 0, 0, .3);
+	cursor: pointer;
+}
+#paging-wrapper li:hover{
+	color: white;
+	background-color: rgba(0, 0, 0, .3);
+}
+#paging-wrapper li:nth-child(1) {
+	width: 50px;
+}
+
+#paging-wrapper li:nth-child(2) {
+	width: 66px;
+}
+
+#paging-wrapper li:nth-child(3) {
+	color: white;
+	background-color: rgba(0, 0, 0, .3);
+}
+/*------中部内容 container------*/
+.container{
+	width:1200px;
+	margin:0 auto;
+}
+/*------搜索框部分 searchBox-----*/
+.wrapperBox{
+	margin:10px 0px 50px 0;
+	height:32px;
+}
+.searchBox{
+	float:right;
+	position:relative;
+	z-index:3;
+	background:#fff;
+	border:1px solid #ccc;
+	color:#999;	
+}
+.searchBox i{
+	float:right;
+	color:#999;
+	width:46px;
+	height:inherit;
+	line-height:32px;
+	text-align: center;
+	font-size:20px;
+}
+.searchBox input{
+	width:180px;
+	height:30px;
+	border:0;
+	outline: none;
+}
+.searchBox span{
+	padding-right:10px;
+}
+/*------搜索框下方分类部分 classify------*/
+.searchContentBox{
+	padding:10px 0 0 10px;
+	background:#fff;
+	border: 1px solid #e6e6e6;
+	font-size:15px;
+}
+
+.searchContentBox tr{
+	border-bottom:1px solid #eee;
+	width:100%;
+}
+table{
+	border-collapse: collapse;
+    border-spacing: 0;
+}
+</style>
+<script>
+//实现搜索框横向伸展效果
+window.onload=function(){
+    var aA=document.getElementsByTagName('input');
+	for(var i=0; i<aA.length; i++){
+		aA[i].onmouseover=function(){
+			var This=this;
+			clearInterval(This.time);/*清除计时器*/
+			This.time=setInterval(function(){/*设定计时器*/
+					This.style.width=This.offsetWidth+8+"px";
+					if(This.offsetWidth>=230)/*input标签的宽度*/
+					clearInterval(This.time);
+				},30)
+		}
+		aA[i].onmouseout=function(){
+				clearInterval(this.time);
+				var This=this;
+				this.time=setInterval(function(){
+					This.style.width=This.offsetWidth-8+"px";
+					if(This.offsetWidth<=180){
+						This.style.width='180px';
+						clearInterval(This.time);
+					}
+				},30)
+		}
+	}
+}
+
+</script>
+</head>
+<body>
+<!-- topBar结束 头部菜单 -->
+	<div class="topBar clearfix">
+		<h1 class="topBarLogo"><b></b>吃了么</h1>
+		<div class="topBarList" id="topBarList">
+			<a href="index.php" class="change">首页</a>
+			<a href="order.php">我的订单</a>
+			<a href="#">加盟合作</a>
+		</div>
+		<nav class="topBarNav">
+			<a href="#"><i class="fa fa-user-o"></i>服务中心</a>
+			<a href="#">规则中心</a>
+			<a href="#"><i class="fa fa-mobile"></i>手机应用</a>
+		</nav>
+		<div class="topBarNavLogin">
+		<?php if(empty($_SESSION['userId'])){?>
+			   <a href="login.html"><i class="fa fa-user"></i>登录/注册</a>
+			   <?php }else{?>
+			    <div class='logname'>
+			      <a  href="order.php"><i class="fa fa-user"></i><?php echo $_SESSION['name'] ?></a>
+			     <span class="logout">退出</span>
+			   </div>
+			   <?php }?>
+		</div>
+	</div>
+<!-- sidebar 侧边栏 -->
+	<div id="sidebar">
+        <div id="wrap">
+            <div id="prof" class="item">
+                <a class="order">
+                    <i class="fa fa-reorder"></i>
+                    <span>我的订单</span><b class="trangle"></b>
+                </a>
+            </div>
+            <div id="asset" class="item">
+                <span>
+                    <i class="fa fa-cart-plus"></i>
+                </span>
+                <div>
+                                                 购物车
+                </div>
+            </div>
+            <div id="brand" class="item">
+                <a class="msg">
+                    <i class="fa fa-envelope-o"></i>
+                    <span>我的信息</span><b class="trangle"></b>
+                </a>
+            </div>  
+        </div>
+        <div id="closeBar"><!-- 将侧边栏收进去 -->
+            <div>
+                <i class="fa fa-remove"></i>
+            </div>
+        </div>
+    </div><!-- sideBar结束 -->
+    <div id="asset-content" class="nav-content"><!-- 侧边栏滑出内容 -->
+        <div class="nav-con-close">
+            <i class="fa fa-angle-left fa-2x"></i>
+        </div>
+        <div class="carContent clearfix">
+            <h3>购物车</h3>
+            <div class="carChoose">
+                <div class="chooseTitle">
+	                <h4>1号购物车</h4>
+		            <a class="clear" href="#">[清空]</a>
+		            <div class="content"></div>
+                </div>
+            </div>
+            <div class="count">
+	            <p class="sum">共<span>1</span>份，总计￥<span>5</span></p>
+	            <button class="payment">结算</button>
+            </div>
+        </div>
+    </div>
+<!-- container 中部内容 -->
+    <div class="container clearfix">
+		<div class="wrapperBox">
+			<div class="searchBox clearfix">
+				<i class="fa fa-search"></i>
+				<span></span><input id="change" class="searchInput" placeholder="搜索商家/美食...">
+			</div>
+		</div>
+		<!-- 搜索主体 -->
+		<div class="searchContentBox">
+			<table>
+				<tr class="boxTitle">
+					<h4>川渝餐馆</h4>
+					<div class="star">000000</div><!-- 星级评分 -->
+					<small>
+					       月售<span>200</span>
+					</small>
+					<small>
+					       平均<span>45</span>分钟送达
+					</small>
+				</tr>
+				<tr class="boxBody">
+					<td><a>扬州炒饭+红烧肉</a></td><!-- 点击链接到店铺 -->
+					<td>￥<span>20</span></td>
+					<td><a>去购买</a></td>
+					<td>
+						<div class="star">000000</div><!-- 星级评分 -->
+						<small>
+						       月售<span>200</span>份
+						</small>
+					</td>
+				</tr>
+				<tr class="boxBody">
+					<td><a>扬州炒饭+红烧肉</a></td><!-- 点击链接到店铺 -->
+					<td>￥<span>20</span></td>
+					<td><a>去购买</a></td>
+					<td>
+						<div class="star">000000</div><!-- 星级评分 -->
+						<small>
+						       月售<span>200</span>份
+						</small>
+					</td>
+				</tr>
+				<tr class="boxBody">
+					<td><a>扬州炒饭+红烧肉</a></td><!-- 点击链接到店铺 -->
+					<td>￥<span>20</span></td>
+					<td><a>去购买</a></td>
+					<td>
+						<div class="star">000000</div><!-- 星级评分 -->
+						<small>
+						       月售<span>200</span>份
+						</small>
+					</td>
+				</tr>
+				<tr class="boxBody">
+					<td><a>扬州炒饭+红烧肉</a></td><!-- 点击链接到店铺 -->
+					<td>￥<span>20</span></td>
+					<td><a>去购买</a></td>
+					<td>
+						<div class="star">000000</div><!-- 星级评分 -->
+						<small>
+						       月售<span>200</span>份
+						</small>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<!-- 搜索主体 结束-->
+	</div><!-- 中部内容结束 -->
+	<ul id="paging-wrapper"></ul>
+<!-- footer 页脚 -->
+	<div class="footer clearfix">
+		<div class="footerLinks help">
+			<h3 class="linksTitle">用户帮助</h3>
+			<a href="#">服务中心</a>
+			<a href="#">常见问题</a>
+		</div>
+		<div class="footerLinks cooperation">
+			<h3 class="linksTitle">商务合作</h3>
+			<a href="#">我要开店</a>
+			<a href="#">加盟指南</a>
+			<a href="#">市场合作</a>
+			<a href="#">开放平台</a>
+		</div>
+		<div class="footerLinks about">
+			<h3 class="linksTitle">关于我们</h3>
+			<a href="#">吃了么介绍</a>
+			<a href="#">加入我们</a>
+			<a href="#">联系我们</a>
+			<a href="#">规则中心</a>
+		</div>
+		<div class="footerContect">
+			<ul>
+				<li>24小时客服热线：<a>1234567</a></li>
+				<li>意见反馈：<a>12345@163.com</a></li>
+				<li>
+					关注我们：
+					<a href="#"><i class="fa fa-qq"></i></a>
+					<a href="#"><i class="fa fa-facebook"></i></a>
+				</li>
+			</ul>
+		</div>
+		<div class="footerQrCode clearfix">
+			<a href="#"><img src="http://faas.elemecdn.com/desktop/media/img/appqc.95e532.png"></a>
+			<div class="qrCodeRight">
+				<h3>下载手机版</h3>
+				<p>扫一扫，手机订餐更方便</p>
+			</div>
+		</div>
+		<div class="footerCopyRight">
+		           技术支持Team.S&nbsp;&nbsp;copyright&copy&nbsp;2004-2017&nbsp;&nbsp;Team.S 版权所有
+		</div>
+	</div>
+	<!-- 页脚结束 -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/JqueryPaging-1.0.js"></script>
+</body>
+
+</html>

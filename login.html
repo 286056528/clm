@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>吃了么_登陆</title>
-	<link rel="shortcut icon" href="favicon.ico">
 	<link rel="stylesheet" href="css/login.css">
+	<link rel="shortcut icon" href="favicon.ico">
 </head>
 <body >
 
@@ -25,17 +25,17 @@
 
 
 		<div id="loginDiv" style="display: block;">
-			<form action="#" class="box">
-				<div class="item1 ">
+			<form action="" class="box" >
+				<div class="item ">
 					<input type="text" id="username" class="inputBox1" value=""  placeholder="请输入账户">
-					<b></b>
+					<b class="b1"></b>
 				</div>
-				<div class="item2">
+				<div class="item">
 					<input type="password" id="pwd" class="inputBox1" value=""  placeholder="请输入密码">
-					<b></b>
+					<b class="b2"></b>
 				</div>
 				<div>
-					<input type="submit" id="loginSubmit" class="botton"  value="登录" >
+					<input type="button" id="loginSubmit" class="botton"  value="登 陆" />
 				</div>
 			</form>
 			<div class="ohter">
@@ -44,10 +44,10 @@
 		</div>
 
 		<div id="signDiv" style="display:none;">
-			 <form action="#" class="box" onsubmit="">
+			 <form action="PHP/register.php" class="box" method="post">
 				<div class="item">
 					<div class="username">
-						<input type="text"  class="inputBox2" value="" name="sname"  placeholder="选请输入你的手机号码">
+						<input type="text"  class="inputBox2" value="" name="phone"  placeholder="选请输入你的手机号码">
 						<b class="tips"></b>
 					</div>
 					<div class="password">
@@ -60,7 +60,7 @@
 					</div>
 					<div class="verify">
 						<input type="text"  class="inputBox2" value="" name="verifycode" placeholder="输入验证码">
-						<span><img src="PHP/verifyCode.php" alt="验证码"></span>
+						<span><img id='imgVerifyCode' src="php/verifyCode.php" alt="验证码"></span>
 						<b class="tips"></b>
 					</div>
 					<div>
@@ -106,7 +106,7 @@
 					<p>
 						<a href="#">加入我们</a>
 						<a href="#">联系我们</a>
-					</p>
+					</p>	
 					<p>技术支持Team.S&nbsp;&nbsp;copyright&copy&nbsp;2004-2017&nbsp;&nbsp;Team.S 版权所有</p>
 				</div>
 			</div>
@@ -121,6 +121,58 @@
 <script  type="text/javascript" src="js/reg.js"></script>
 
 <script type="text/javascript">
+       //验证码点击刷新
+    $('#imgVerifyCode').click(function(){  
+	    //由于浏览器会缓存URL相同的资源，如果是同样的请求路径,则不会重新请求，所以使用随机数来改变路径
+	    $(this).attr('src','php/verifyCode.php?'+Math.random()); //刷新验证码
+    });
+    
+       /* 登陆 */
+		$('#loginSubmit').click(function () {
+			var userNameValue =$('#username').val();
+			var passwordValue =$('#pwd').val();
+			
+			if(userNameValue==''){
+				$('.b1').html('输入不能为空');
+			}else{
+				if(passwordValue==''){
+                    $('.b2').html('输入不能为空'); 
+                }
+                else{
+                	$.post("PHP/api.php",{status:'login',phone:userNameValue,password:passwordValue},function (re) {
+    					
+    					switch(re.sta){
+    					case 0: 
+    						    $('.b1').css('color','red');
+    					        $('.b2').css('color','red');
+	                            $('.b1').html(re.msg1);
+	                            $('.b2').html(re.msg2);
+	                            break;
+    					case 1: 
+    						    $('.b1').css('color','green');
+    					        $('.b2').css('color','red');
+    					        $('.b1').html(re.msg1);
+    	                        $('.b2').html(re.msg2);
+    	                        break;
+    					case 2: 
+    						   // console.log(re);
+    						    $('.b1').css('color','green');
+					            $('.b2').css('color','green');
+					            $('.b1').html(re.msg1);
+	                            $('.b2').html(re.msg2);
+	                            
+	                            window.location.href='index.php';
+	                            break;
+	                    default: 
+	                    	    console.log(re);
+	                    	    $('.b1').css('color','red');
+								$('.b1').html('illegal opration');
+    					}
+    	            },'json');
+                }
+			}
+        });
+    
 
 
     $('#login').click(function () {
@@ -131,6 +183,7 @@
         $('#loginDiv').hide();
         $('#signDiv').show();
     })
+    
 
 </script>
 </html>

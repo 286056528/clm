@@ -2,6 +2,8 @@
 require 'food.php';
 require 'shop.php';
 require 'comment.php';
+require 'user.php';
+require 'order.php';
 class SqlOperation
 {
 
@@ -31,6 +33,7 @@ class SqlOperation
             $temp->setShop_opening_hours($array['work_time']);
             $temp->setShop_announcement($array['announcement']);
             $temp->setShop_kind_food($array['kindfood']);
+            $temp->setShop_phone($array['phone']);
             array_push($result_array, $temp);
         }
         return $result_array;
@@ -41,6 +44,11 @@ class SqlOperation
         $result = $this->mysqli->query($sql);
         $num = $result->num_rows;
         return $num;  
+    }
+    
+    //修改商家的销售总量
+    function updateShopSales($sql){
+        return $this->mysqli->query($sql);
     }
     
     //获取食品的信息
@@ -64,6 +72,11 @@ class SqlOperation
         return $result_array;
     }
     
+    //修改食品数量
+    function updateFoodSales($sql){
+        return $this->mysqli->query($sql);
+    }
+    
     //获取商家评论的信息
     function getCommentData($sql){
         $result_array = array();
@@ -84,6 +97,98 @@ class SqlOperation
         $result = $this->mysqli->query($sql);
         $num = $result->num_rows;
         return $num;
+    }
+    
+    //获取订单信息
+    function getOrderData($sql){
+        $result_array = array();
+        $result = $this->mysqli->query($sql);
+        while ($array = $result->fetch_assoc()){
+            $temp = new Order();
+            $temp->setOrder_id($array['id']);
+            $temp->setOrder_b_id($array['bid']);
+            $temp->setOrder_b_name($array['b_name']);
+            $temp->setOrder_b_phone($array['b_phone']);
+            $temp->setOrder_food_id($array['fid']);
+            $temp->setOrder_food_name($array['food_name']);
+            $temp->setOrder_food_price($array['food_price']);
+            $temp->setOrder_food_num($array['food_num']);
+            $temp->setOrder_total_prices($array['total_prices']);
+            $temp->setOrder_time($array['order_time']);
+            $temp->setOrder_status($array['order_status']);
+            $temp->setOrder_rating_count($array['order_rating_count']);
+            array_push($result_array, $temp);
+        }
+        return $result_array;
+    }
+    
+    
+    
+    //获取订单条数
+    function getOrderNum($sql){
+        $result = $this->mysqli->query($sql);
+        $num = $result->num_rows;
+        return $num;
+    }
+    
+    
+    //想订单表中插入数据
+    function insertOrder($sql){
+       return $this->mysqli->query($sql);
+    }
+    
+    //获取用户信息
+    function getLoginInfo($sql) {
+        $result_array = array();
+        $result=$this->mysqli->query($sql);
+        $data = $result->fetch_assoc();
+    
+        if(!empty($data)){
+            $temp= new User();
+            $temp->setUser_id($data['id']);
+            $temp->setUser_phone($data['phone']);
+            $temp->setUser_password($data['password']);
+            $temp->setUser_name($data['name']);
+            $temp->setUser_photo($data['photo']);
+            $temp->setUser_email($data['e-mail']);
+            array_push($result_array, $temp);
+    
+        }else {
+            return false; //未查询到该用户返回错误；
+        }
+         
+        return $result_array ;
+    }
+    
+    //修改数据表中的数据
+    function updateData($sql){
+        return $this->mysqli->query($sql);
+    }
+    
+    //向表中添加数据
+    function insertData($sql){
+        return $this->mysqli->query($sql);
+    }
+    
+    //删除表中的数据
+    function deleteData($sql){
+        return $this->mysqli->query($sql);
+    }
+    
+    
+    function getphone($sql){
+        $res= $this->mysqli->query($sql);
+        $result=mysqli_fetch_assoc($res);
+        return $result;
+    }
+    function selpass($sel){
+        $res= $this->mysqli->query($sel);
+        $result=mysqli_fetch_assoc($res);
+        return $result;
+    }
+    function uppass($sql){
+        $result= $this->mysqli->query($sql);
+        return $result;
     }
 }
 ?>
