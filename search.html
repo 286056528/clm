@@ -60,11 +60,6 @@
 	color: white;
 	background-color: rgba(0, 0, 0, .3);
 }
-/*------中部内容 container------*/
-.container{
-	width:1200px;
-	margin:0 auto;
-}
 /*------搜索框部分 searchBox-----*/
 .wrapperBox{
 	margin:10px 0px 50px 0;
@@ -97,20 +92,76 @@
 	padding-right:10px;
 }
 /*------搜索框下方分类部分 classify------*/
+.container{
+	width:1200px;
+	margin:0 auto;
+}
 .searchContentBox{
-	padding:10px 0 0 10px;
-	background:#fff;
-	border: 1px solid #e6e6e6;
+	
 	font-size:15px;
 }
-
-.searchContentBox tr{
-	border-bottom:1px solid #eee;
-	width:100%;
-}
-table{
+.searchContentBox table{
+	border: 1px solid #e6e6e6;
 	border-collapse: collapse;
     border-spacing: 0;
+	margin-bottom: 15px;
+}
+td{
+	border-bottom:1px solid #f5f5f5;
+	padding:11px 14px;
+}
+.boxTitle{
+	background: #f5f5f5;
+}
+.boxTitle th{
+	border-bottom:1px solid #eee;
+}
+.boxTitle th{
+	padding: .5em 1em;
+}
+.boxTitle .star{
+	display: inline-block;
+}
+.sale{
+	border-right:1px solid #ddd;
+	margin:0 20px 0 10px;
+	padding-right:10px;
+	height:5px;
+}
+.sendTime{
+	border-left:1px solid #ddd;
+	padding-left:10px;
+	height:5px;
+}
+.searchContentBox small{
+	color:#888;
+	
+}
+.searchContentBox small span{
+	padding-left:5px;
+}
+.boxBody{
+	background:#fff;
+}
+.foodName{
+	width:800px;
+}
+.foodName a,.evaluate small{
+	color:#333;
+}
+.price{
+	width:100px;
+}
+.toBuy{
+	width:150px;
+}
+.toBuy a{
+	color:#fff;
+	background: #0080d9;
+	padding:10px 30px;
+}
+.evaluate{
+	width:150px;
 }
 </style>
 <script>
@@ -229,20 +280,22 @@ window.onload=function(){
 		<div class="searchContentBox">
 			<table>
 				<tr class="boxTitle">
+				<th colspan="4">
 					<h4>川渝餐馆</h4>
-					<div class="star">000000</div><!-- 星级评分 -->
-					<small>
+					<div class="star">0000000000</div><!-- 星级评分 -->
+					<small class="sale">
 					       月售<span>200</span>
 					</small>
-					<small>
+					<small class="sendTime">
 					       平均<span>45</span>分钟送达
 					</small>
+				</th>
 				</tr>
 				<tr class="boxBody">
-					<td><a>扬州炒饭+红烧肉</a></td><!-- 点击链接到店铺 -->
-					<td>￥<span>20</span></td>
-					<td><a>去购买</a></td>
-					<td>
+					<td class="foodName"><a>扬州炒饭+红烧肉</a></td><!-- 点击链接到店铺 -->
+					<td class="price">￥<span>20</span></td>
+					<td class="toBuy"><a>去购买</a></td>
+					<td class="evaluate">
 						<div class="star">000000</div><!-- 星级评分 -->
 						<small>
 						       月售<span>200</span>份
@@ -250,10 +303,10 @@ window.onload=function(){
 					</td>
 				</tr>
 				<tr class="boxBody">
-					<td><a>扬州炒饭+红烧肉</a></td><!-- 点击链接到店铺 -->
-					<td>￥<span>20</span></td>
-					<td><a>去购买</a></td>
-					<td>
+					<td class="foodName"><a>扬州炒饭+红烧肉</a></td><!-- 点击链接到店铺 -->
+					<td class="price">￥<span>20</span></td>
+					<td class="toBuy"><a>去购买</a></td>
+					<td class="evaluate">
 						<div class="star">000000</div><!-- 星级评分 -->
 						<small>
 						       月售<span>200</span>份
@@ -261,10 +314,10 @@ window.onload=function(){
 					</td>
 				</tr>
 				<tr class="boxBody">
-					<td><a>扬州炒饭+红烧肉</a></td><!-- 点击链接到店铺 -->
-					<td>￥<span>20</span></td>
-					<td><a>去购买</a></td>
-					<td>
+					<td class="foodName"><a>扬州炒饭+红烧肉</a></td><!-- 点击链接到店铺 -->
+					<td class="price">￥<span>20</span></td>
+					<td class="toBuy"><a>去购买</a></td>
+					<td class="evaluate">
 						<div class="star">000000</div><!-- 星级评分 -->
 						<small>
 						       月售<span>200</span>份
@@ -272,10 +325,10 @@ window.onload=function(){
 					</td>
 				</tr>
 				<tr class="boxBody">
-					<td><a>扬州炒饭+红烧肉</a></td><!-- 点击链接到店铺 -->
-					<td>￥<span>20</span></td>
-					<td><a>去购买</a></td>
-					<td>
+					<td class="foodName"><a>扬州炒饭+红烧肉</a></td><!-- 点击链接到店铺 -->
+					<td class="price">￥<span>20</span></td>
+					<td class="toBuy"><a>去购买</a></td>
+					<td class="evaluate">
 						<div class="star">000000</div><!-- 星级评分 -->
 						<small>
 						       月售<span>200</span>份
@@ -334,6 +387,225 @@ window.onload=function(){
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/sidebar.js"></script>
     <script src="js/JqueryPaging-1.0.js"></script>
+    <script>
+    (function(){
+    	
+    	//结算
+    	$('.payment').on("click",function(){
+    		$.ajax({
+    	        type: "post",
+    	        url: 'PHP/api.php',
+    	        dataType: 'json',
+    	        data: {status:"payment"},
+    	        success: function (data) {
+    	        	if(data['status'] === 2){
+    	        		alert("请登录后再结算！")
+    	        		window.location.href = "login.html";
+    	        	}else if(data['status'] === 3){
+    	        		alert("购物是空的哦，快去选购一些食物吧！")
+    	        	}else if(data['status'] === 1){
+	        	    window.location.href = "order.php"
+		        	}
+    	        },
+    	        error: function () {
+    	           console.log("error")
+    	        }
+    	    })
+    	})
+    	
+    	//获取购物车里的数据
+    	var sum = 0
+    	$.ajax({
+            type: "post",
+            url: 'PHP/api.php',
+            dataType: 'json',
+            data: {status:"shopcart",type:"get"},
+            success: function (data) {
+            	console.log(data)
+            	
+            		html = ""
+            	for(var i = 0;i<data.length;i++){
+            		sum += parseInt(data[i].price)
+            		html += "<p>" + data[i].name + "</p>"
+            	}
+            	 
+    			$(".content").html(html)		
+           html = "共<span>" + data.length + "</span>份，总计￥<span>" + sum + "</span>"
+    		$(".sum").html(html)
+            },
+            error: function () {
+               console.log("error")
+            }
+        })
+    	
+    	//清除购物车里的数据
+		$(".clear").on("click",function(){
+			$.ajax({
+		        type: "post",
+		        url: 'PHP/api.php',
+		        dataType: 'json',
+		        data: {status:"shopcart",type:"delete"},
+		        success: function (data) {
+		        	if(data['state']){
+		        		$(".content").html("")	
+		        		sum = 0
+		        		var html = "共<span>" +0+ "</span>份，总计￥<span>" + 0+ "</span>"
+			$(".sum").html(html)
+		        }
+		        },
+		        error: function () {
+		           console.log("error")
+		        }
+		    })
+		})
+    	
+    	 	
+        //首页商家分类
+        var navClassify = $("#classify a")
+        navClassify.on("click",function(){
+        	var _index = $(this).index() - 1,
+        		_data = {}
+        	console.log(_index)
+        	
+        	
+        	if(_index === 0){
+        		_data = {
+        				status:"index",
+        				currentPage:1	
+        		}
+        	}else{
+        		_data = {
+        				status:"index",
+        				type:_index,
+        				currentPage:1
+        		}
+        	}
+        	
+        	$.ajax({
+                type: "post",
+                url: 'PHP/api.php',
+                dataType: 'json',
+                data: _data,
+                success: function (data) {
+        			console.log(data)
+        			var html = "";
+        			console.log(data.length)
+                   for(var i = 0;i <data.length - 1;i++){
+        				html += "<a href='PHP/api.php?status=indextoshop&id="+data[i].shop_id+"'"+
+        								"class='resBox clearfix'>"+
+        								"<div class='restaurantLogo'>"+
+        								"<img alt='"+data[i].shop_name+"' src='"+data[i].shop_img_path+"'>"+
+        								"<span>30分钟</span>"+
+        								"</div>"+
+        								"<div class='resIntroduce'>"+
+        								"<h3>"+data[i].shop_name+"</h3>"+
+        								"<div class='starrating'>"
+        							     var _starnum = 0
+        							    if(data[i].shop_rating_count === 5){
+        							        _starnum = 5
+            							    }else{
+            							        _starnum = Math.ceil(data[i].shop_rating_count/data[i].shop_sales)
+                							    }
+
+        			                    for(var j = 0;j <5;j++){
+            			                    if(j<_starnum){
+          			                    	   html += "<b class='starnum'></b>"
+            			                        }else{
+            			                        	html += "<b></b>"
+                			                        }
+            			                    } 
+        								
+        							html +="</div>"+
+        								"<span class='sale'>总售"+data[i].shop_sales+"</span>"
+        			   	if(data[i].shop_delivery_cost === "0"){
+        								html +="<p>免配送费</p>"
+        						}else{
+        					html +="<p>配送费￥"+data[i].shop_delivery_cost+"</p>"
+        						}
+        								html +="</div></a>"
+                   }
+                   $('.contentBox').html(html)
+                   //配置数据
+                   var option = {
+                       id: '#paging-wrapper',
+                       pages: Math.ceil(data[data.length -1] / 8), //总页数
+                       displayPage: 3, //只显示多少页
+                       data:_data,
+                       drawHtml:function(data){
+                    	   var html = "";
+                           for(var i = 0;i <data.length - 1;i++){
+                        	   html += "<a href='PHP/api.php?status=indextoshop&id="+data[i].shop_id+"'"+
+								"class='resBox clearfix'>"+
+								"<div class='restaurantLogo'>"+
+								"<img alt='"+data[i].shop_name+"' src='"+data[i].shop_img_path+"'>"+
+								"<span>30分钟</span>"+
+								"</div>"+
+								"<div class='resIntroduce'>"+
+								"<h3>"+data[i].shop_name+"</h3>"+
+								"<div class='starrating'>"
+							     var _starnum = 0
+							    if(data[i].shop_rating_count === 5){
+							        _starnum = 5
+  							    }else{
+  							        _starnum = Math.ceil(data[i].shop_rating_count/data[i].shop_sales)
+      							    }
+
+			                    for(var j = 0;j <5;j++){
+  			                    if(j<_starnum){
+			                    	   html += "<b class='starnum'></b>"
+  			                        }else{
+  			                        	html += "<b></b>"
+      			                        }
+  			                    } 
+								
+							html +="</div>"+
+								"<span class='sale'>总售"+data[i].shop_sales+"</span>"
+			   	if(data[i].shop_delivery_cost === "0"){
+								html +="<p>免配送费</p>"
+						}else{
+					html +="<p>配送费￥"+data[i].shop_delivery_cost+"</p>"
+						}
+								html +="</div></a>"
+	                          }
+                          $('.contentBox').html(html)
+                       }
+                   }
+                   //调用分页插件
+                   new Paging(option)
+                },
+                error: function () {
+                   console.log("error")
+                }
+            })
+        })
+        navClassify[0].click()
+
+
+        $('.logname').on("mouseover",function(){
+		$('.logout').css("display","inline-block");
+		$('.logout').on("click",function(){
+			$.ajax({
+		        type: "post",
+		        url: 'PHP/api.php',
+		        dataType: 'json',
+		        data: {status:"logout"},
+		        success: function (data) {
+		        	if(data['status'] === 1){
+	        		    window.location.href = "index.php"
+		        	  }
+		        },
+		        error: function () {
+		           console.log("error")
+		        }
+		    })
+		});
+
+	  }).on("mouseout",function(){
+		  $('.logout').css("display","none");
+		  })
+        
+    })()
+    </script>
 </body>
 
 </html>

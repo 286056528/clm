@@ -7,7 +7,7 @@ ul{list-style:none;}
 .clear:after{clear:both;display:block;height:0px;content:'';zoom:1;overflow:hidden;}
 .clearfix{clear:both;zoom:1;}
 .clearfix:after{display:block;overflow:hidden;clear:both;height:0;visibility:hidden;content:""}
-body{background:#eee;font-family: 'Microsoft YaHei','Open Sans', 'trebuchet ms', arial, sans-serif;}
+body{background:#eee !important;font-family: 'Microsoft YaHei','Open Sans', 'trebuchet ms', arial, sans-serif;}
 /*顶部nav topBar*/
 .topBarNav,.topBarNavLogin,.topBarList{
 	display:inline-block;
@@ -457,6 +457,7 @@ body{background:#eee;font-family: 'Microsoft YaHei','Open Sans', 'trebuchet ms',
 .footerLinks{
 	width:15%;
 	float:left;
+	margin-top:10px !important;
 }
 .footerLinks,.footerContect{
 	display:inline-block;
