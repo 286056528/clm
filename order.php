@@ -5,7 +5,6 @@ if (empty($_SESSION['userId'])) {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,18 +62,15 @@ if (empty($_SESSION['userId'])) {
 	color: white;
 	background-color: rgba(0, 0, 0, .3);
 }
-
 .container {
 	margin-top: 50px;
 	min-width: 980px;
 }
-
 .order_page {
 	width: 980px;
 	margin: 0px auto;
 	position: relative;
 }
-
 .order_page .view_list {
 	display: inline-block;
 	width: 170px;
@@ -82,17 +78,14 @@ if (empty($_SESSION['userId'])) {
 	padding-top: 50px;
 	background: white;
 }
-
 .view_list .list_nav {
 	width: 170px;
 	height: 50px;
 }
-
 .view_list .list_nav:hover {
 	cursor: pointer;
 	background: #1e89e0;
 }
-
 .view_list .list_nav b {
 	display: inline-block;
 	width: 30px;
@@ -101,19 +94,15 @@ if (empty($_SESSION['userId'])) {
 	margin-left: 20px;
 	border-radius: 100px;
 }
-
 .view_list .list_nav .order_img {
 	background: url(images/order.png) no-repeat;
 }
-
 .view_list .list_nav .account_img {
 	background: url(images/account.png) no-repeat;
 }
-
 .view_list .list_nav .collect_img {
 	background: url(images/order.png) no-repeat;
 }
-
 .view_list .list_nav span {
 	display: inline-block;
 	position: relative;
@@ -125,11 +114,9 @@ if (empty($_SESSION['userId'])) {
 	font-weight: 600;
 	line-height: 30px;
 }
-
 .view_list .list_nav span:hover {
 	color: white;
 }
-
 /* 当前订单、三个月订单 */
 .order_page .order_list {
 	display: inline-block;
@@ -139,7 +126,6 @@ if (empty($_SESSION['userId'])) {
 	margin-bottom: 50px;
 	background: white;
 }
-
 .order_page .orders_list {
 	display: none;
 	float: right;
@@ -148,19 +134,16 @@ if (empty($_SESSION['userId'])) {
 	margin-bottom: 50px;
 	background: white;
 }
-
 .order_page .order_list .order_list_top {
 	width: 100%;
 	height: 50px;
 	border-bottom: 1px solid #eee;
 }
-
 .order_page .orders_list .orders_list_top {
 	width: 100%;
 	height: 50px;
 	border-bottom: 1px solid #eee;
 }
-
 .order_list .order_list_top span {
 	display: inline-block;
 	height: 50px;
@@ -168,7 +151,6 @@ if (empty($_SESSION['userId'])) {
 	font-size: 14px;
 	color: #6d6d6d;
 }
-
 .orders_list .orders_list_top span {
 	display: inline-block;
 	height: 50px;
@@ -176,58 +158,46 @@ if (empty($_SESSION['userId'])) {
 	font-size: 14px;
 	color: #6d6d6d;
 }
-
 .order_list .order_list_top .content_top {
 	width: 420px;
 	margin-left: 20px;
 }
-
 .order_list .order_list_top .phone_top {
 	width: 130px;
 }
-
 .order_list .order_list_top .payment_top {
 	width: 70px;
 }
-
 .order_list .order_list_top .operate_top {
 	width: 100px;
 	text-align: center;
 }
-
 .orders_list .orders_list_top .content_top {
 	width: 420px;
 	margin-left: 20px;
 }
-
 .orders_list .orders_list_top .phone_top {
 	width: 130px;
 }
-
 .orders_list .orders_list_top .payment_top {
 	width: 70px;
 }
-
 .orders_list .orders_list_top .operate_top {
 	width: 100px;
 	text-align: center;
 }
-
 .order_page .order_list .order_list_note {
 	width: 100%;
 	height: 111px;
 }
-
 .order_page .orders_list .orders_list_note {
 	width: 100%;
 	height: 111px;
 }
-
 .order_page .orders_list .orders_list_note:hover {
 	cursor: pointer;
 	background: #fcfcfc;
 }
-
 .order_list .order_list_note .note_main {
 	width: 760px;
 	height: 110px;
@@ -235,7 +205,6 @@ if (empty($_SESSION['userId'])) {
 	position: relative;
 	border-bottom: 1px dashed #ddd;
 }
-
 .orders_list .orders_list_note .notes_main {
 	width: 760px;
 	height: 110px;
@@ -243,18 +212,15 @@ if (empty($_SESSION['userId'])) {
 	position: relative;
 	border-bottom: 1px dashed #ddd;
 }
-
 .note_main .content, .phone, .payment {
 	float: left;
 	height: 110px;
 	margin-right: 5px;
 	line-height: 110px;
 }
-
 .note_main .content {
 	width: 420px;
 }
-
 .note_main .content b {
 	float: left;
 	width: 80px;
@@ -262,7 +228,6 @@ if (empty($_SESSION['userId'])) {
 	margin-top: 15px;
 	border: 1px solid #ddd;
 }
-
 .note_main .content .restarant {
 	float: left;
 	width: 300px;
@@ -270,18 +235,15 @@ if (empty($_SESSION['userId'])) {
 	margin-left: 10px;
 	margin-top: 15px;
 }
-
 .notes_main .contents, .phones, .payments {
 	float: left;
 	height: 110px;
 	margin-right: 5px;
 	line-height: 110px;
 }
-
 .notes_main .contents {
 	width: 420px;
 }
-
 .notes_main .contents b {
 	float: left;
 	width: 80px;
@@ -289,7 +251,6 @@ if (empty($_SESSION['userId'])) {
 	margin-top: 15px;
 	border: 1px solid #ddd;
 }
-
 .notes_main .contents .restarants {
 	float: left;
 	width: 300px;
@@ -297,7 +258,6 @@ if (empty($_SESSION['userId'])) {
 	margin-left: 10px;
 	margin-top: 15px;
 }
-
 .restarant .restname {
 	width: 300px;
 	height: 40px;
@@ -305,7 +265,6 @@ if (empty($_SESSION['userId'])) {
 	font-weight: 700;
 	line-height: 40px;
 }
-
 .restarants .restnames {
 	width: 300px;
 	height: 40px;
@@ -313,56 +272,45 @@ if (empty($_SESSION['userId'])) {
 	font-weight: 700;
 	line-height: 40px;
 }
-
 .restarant .restmes {
 	width: 300px;
 	height: 40px;
 	line-height: 40px;
 }
-
 .restarants .restmess {
 	width: 300px;
 	height: 40px;
 	line-height: 40px;
 }
-
 .restarant .restmes .order_time, .order_number {
 	display: inline-block;
 	font-size: 12px;
 }
-
 .restarant .restmes .order_time {
 	width: 120px;
 }
-
 .restarant .restmes .order_number {
 	width: 170px;
 }
-
 .restarants .restmess .order_times, .order_numbers {
 	display: inline-block;
 	font-size: 12px;
 }
-
 .restarants .restmess .order_times {
 	width: 120px;
 }
-
 .restarants .restmess .order_numbers {
 	width: 170px;
 }
-
 .note_main .phone {
 	font-size: 14px;
 	width: 130px;
 }
-
 .note_main .payment {
 	font-size: 18px;
 	font-weight: 500;
 	width: 70px;
 }
-
 .note_main .operate {
 	width: 80px;
 	height: 30px;
@@ -375,25 +323,21 @@ if (empty($_SESSION['userId'])) {
 	border: 1px solid #ddd;
 	border-radius: 3px;
 }
-
 .note_main .operate:hover {
 	border: none;
 	background: #1e89e0;
 	color: white;
 	cursor: pointer;
 }
-
 .notes_main .phones {
 	font-size: 14px;
 	width: 130px;
 }
-
 .notes_main .payments {
 	font-size: 18px;
 	font-weight: 500;
 	width: 70px;
 }
-
 .notes_main .operates {
 	width: 80px;
 	height: 30px;
@@ -406,27 +350,23 @@ if (empty($_SESSION['userId'])) {
 	border: 1px solid #ddd;
 	border-radius: 3px;
 }
-
 .notes_main .operates:hover {
 	border: none;
 	background: #1e89e0;
 	color: white;
 	cursor: pointer;
 }
-
 .order_list .estimate_list {
 	width: 750px;
 	position: relative;
 	margin: 0px auto;
 	border: 1px solid #ddd;
 }
-
 .order_list .estimate_list .order_main {
 	width: 350px;
 	min-height: 330px;
 	border-right: 1px solid #ddd;
 }
-
 .orders_list .estimates_list {
 	display: none;
 	width: 750px;
@@ -434,13 +374,11 @@ if (empty($_SESSION['userId'])) {
 	margin: 0px auto;
 	border: 1px solid #ddd;
 }
-
 .orders_list .estimates_list .orders_main {
 	width: 350px;
 	min-height: 330px;
 	border-right: 1px solid #ddd;
 }
-
 .estimate_list p {
 	width: 100%;
 	height: 50px;
@@ -450,7 +388,6 @@ if (empty($_SESSION['userId'])) {
 	font-weight: 600;
 	font-size: 15px;
 }
-
 .estimates_list p {
 	width: 100%;
 	height: 50px;
@@ -460,7 +397,6 @@ if (empty($_SESSION['userId'])) {
 	font-weight: 600;
 	font-size: 15px;
 }
-
 .estimate_list .order_main  .dish_list {
 	width: 310px;
 	height: 30px;
@@ -468,7 +404,6 @@ if (empty($_SESSION['userId'])) {
 	line-height: 30px;
 	font-size: 14px;
 }
-
 .estimates_list .orders_main .dishs_list {
 	width: 310px;
 	height: 30px;
@@ -476,37 +411,30 @@ if (empty($_SESSION['userId'])) {
 	line-height: 30px;
 	font-size: 14px;
 }
-
 .order_main .dish_list .name {
 	display: inline-block;
 	width: 180px;
 }
-
 .order_main .dish_list .number {
 	display: inline-block;
 	width: 30px;
 }
-
 .order_main .dish_list .price {
 	display: inline-block;
 	width: 70px;
 }
-
 .orders_main .dishs_list .names {
 	display: inline-block;
 	width: 180px;
 }
-
 .orders_main .dishs_list .numbers {
 	display: inline-block;
 	width: 30px;
 }
-
 .orders_main .dishs_list .prices {
 	display: inline-block;
 	width: 70px;
 }
-
 .estimate_list .order_main .real_list {
 	width: 310px;
 	height: 80px;
@@ -516,7 +444,6 @@ if (empty($_SESSION['userId'])) {
 	font-size: 14px;
 	border-top: 1px dashed #ddd;
 }
-
 .estimates_list .orders_main .reals_list {
 	width: 310px;
 	height: 80px;
@@ -526,47 +453,40 @@ if (empty($_SESSION['userId'])) {
 	font-size: 14px;
 	border-top: 1px dashed #ddd;
 }
-
 .real_list .real_pay {
 	font-size: 24px;
 	font-weight: 600;
 	color: #1e89e0;
 }
-
 .reals_list .reals_pay {
 	font-size: 24px;
 	font-weight: 600;
 	color: #1e89e0;
 }
-
 .order_list .estimate_list .estimate_main {
 	position: absolute;
 	top: 0px;
 	right: 0px;
 	width: 400px;
 }
-
 .estimate_main .estimate_level {
 	width: 380px;
 	height: 60px;
 	margin: 0px auto;
 	line-height: 50px;
 }
-
 .orders_list .estimates_list .estimates_main {
 	position: absolute;
 	top: 0px;
 	right: 0px;
 	width: 400px;
 }
-
 .estimates_main .estimates_level {
 	width: 380px;
 	height: 60px;
 	margin: 0px auto;
 	line-height: 50px;
 }
-
 .estimate_main .estimate_level .wrapper {
 	height: 20px;
 	padding: 5px;
@@ -576,14 +496,12 @@ if (empty($_SESSION['userId'])) {
 	display: inline-block;
 	margin-left: 12px;
 }
-
 .estimate_main .estimate_level .wrapper a {
 	float: left;
 	width: 24px;
 	height: 20px;
 	background: url(images/stars.png) 0 -20px no-repeat;
 }
-
 .estimate_main span {
 	display: inline-block;
 	font-size: 15px;
@@ -591,11 +509,9 @@ if (empty($_SESSION['userId'])) {
 	float: left;
 	color: #6d6d6d;
 }
-
 .estimate_main .estimate_level span {
 	margin-left: 10px;
 }
-
 .estimate_main .estimate_level a {
 	display: inline-block;
 	width: 50px;
@@ -608,7 +524,6 @@ if (empty($_SESSION['userId'])) {
 	padding: 0;
 	float: left;
 }
-
 .estimates_main span {
 	display: inline-block;
 	font-size: 15px;
@@ -616,11 +531,9 @@ if (empty($_SESSION['userId'])) {
 	float: left;
 	color: #6d6d6d;
 }
-
 .estimates_main .estimates_level span {
 	margin-left: 10px;
 }
-
 .estimates_main a {
 	display: inline-block;
 	width: 50px;
@@ -633,26 +546,22 @@ if (empty($_SESSION['userId'])) {
 	padding: 0;
 	float: left;
 }
-
 .estimate_main .estimate_text {
 	width: 360px;
 	height: 160px;
 	margin: 0px auto;
 }
-
 .estimates_main .estimates_text {
 	width: 360px;
 	height: 160px;
 	margin: 0px auto;
 }
-
 .estimate_main .estimate {
 	width: 360px;
 	height: 120px;
 	font-size: 14px;
 	resize: none;
 }
-
 .estimate_main .btnEstimate {
 	width: 100px;
 	height: 30px;
@@ -665,16 +574,13 @@ if (empty($_SESSION['userId'])) {
 	background: #46a3ff;
 	border-radius: 5px;
 }
-
 .estimate_main .btnEstimate:hover {
 	cursor: pointer;
 	background: #1e89e0;
 }
-
 .ABC {
 	color: #1e89e0;
 }
-
 .order_page .account_list, .collect_list {
 	display: none;
 	width: 800px;
@@ -684,14 +590,12 @@ if (empty($_SESSION['userId'])) {
 	right: 0px;
 	background: white;
 }
-
 .user_list .user_icon {
 	width: 720px;
 	height: 100px;
 	margin: 0px auto;
 	margin-top: 50px;
 }
-
 .user_list .user_icon span {
 	display: inline-block;
 	width: 100px;
@@ -701,7 +605,6 @@ if (empty($_SESSION['userId'])) {
 	top: -45px;
 	line-height: 30px;
 }
-
 .user_list .user_icon b {
 	display: inline-block;
 	width: 100px;
@@ -709,20 +612,17 @@ if (empty($_SESSION['userId'])) {
 	border-radius: 100px;
 	border: 1px solid #eee;
 }
-
 .user_list .user_name, .user_phone {
 	width: 720px;
 	height: 50px;
 	line-height: 50px;
 	margin: 0px auto;
 }
-
 .user_list .username, .userphone {
 	color: black;
 	font-weight: 500;
 	margin-left: 20px;
 }
-
 .btnUser {
 	width: 80px;
 	height: 30px;
@@ -735,33 +635,28 @@ if (empty($_SESSION['userId'])) {
 	background: #46a3ff;
 	border-radius: 5px;
 }
-
 .btnUser:hover {
 	cursor: pointer;
 	background: #1e89e0;
 }
-
 .account_list .repwd_list {
 	display: none;
 	width: 720px;
 	margin: 0px auto;
 	margin-top: 50px;
 }
-
 .repwd_list span {
 	display: inline-block;
 	width: 80px;
 	height: 40px;
 	line-height: 40px;
 }
-
 .repwd_list input {
 	width: 220px;
 	height: 30px;
 	text-indent: 10px;
 	border: 1px solid #46a3ff;
 }
-
 .btnSure, .btnCancel {
 	display: inline-block;
 	width: 80px;
@@ -775,24 +670,18 @@ if (empty($_SESSION['userId'])) {
 	background: #46a3ff;
 	border-radius: 5px;
 }
-
 .btnSure:hover, .btnCancel:hover {
 	cursor: pointer;
 	background: #1e89e0;
 }
-
 .onb {
 	background: #1e89e0;
 }
-
 .onc {
 	color: white;
 }
 </style>
-<script type="text/javascript">
-
-	  
-	  
+<script type="text/javascript">	  
 var starnum = 0
 $().ready(function(){
 	$(".order_nav").addClass("onb");
@@ -854,16 +743,13 @@ $().ready(function(){
 		$(".user_list").show();
 	});
 });
-
-
 $().ready(function(){
-	
 	 var   bid = 0,  //商家id
 	    commentarray = new Array(),
 	    orderid = 0
 	$.ajax({
 		type:'post',
-		url:'PHP/api.php',
+		url:'php/api.php',
 		dataType:'json',
 		data:{status:'order',type:'orderdata'},
 		success:function(data){
@@ -890,8 +776,7 @@ $().ready(function(){
         			var foodnum=str3.match(/(\d+)/g);
         			var html="";
         			console.log(foodname)
-        			
-        
+   
         			for(var i=0;i<foodname.length;i++){
         				html +=	"<div class='dish_list'><span class='name'>"+foodname[i]+"</span>"+
         				"<span class='number'>"+foodnum[i]+"</span>￥<span class='price'>"+foodprice[i]+"</span></div>"
@@ -916,7 +801,7 @@ $().ready(function(){
 $(".operate").on("click",function(){
 	$.ajax({
 		type:'post',
-		url:'PHP/api.php',
+		url:'php/api.php',
 		dataType:'json',
 		data:{status:'order',type:'delete',order_id:orderid},
 		success:function(data){
@@ -937,7 +822,7 @@ $(".btnEstimate").click(function(){
 	var names=$(".names").html();
 	$.ajax({
 		type:'post',
-		url:'PHP/api.php',
+		url:'php/api.php',
 		dataType:'json',
 		data:{status:'order',type:'submit',order_id:orderid,b_id:bid,foodcontent:commentarray,num:starnum,comment:comment},
 		success:function(sb){
@@ -1024,12 +909,11 @@ $(".btnEstimate").click(function(){
 		});
  }
 
- 
 $(".s1").click(function(){
 	console.log("点击了他")
 	$.ajax({
 		type:'post',
-		url:'PHP/api.php',
+		url:'php/api.php',
 		dataType:'json',
 		data:{status:'order',type:'oldorder',currentPage:1},
 		success:function(data){
@@ -1132,7 +1016,6 @@ $(".s1").click(function(){
 })
 
 window.onload = function(){
-//order.html:1102 GET http://faas.elemecdn.com/desktop/media/img/appqc.95e532.png net::ERR_INTERNET_DISCONNECTED
 	var star = document.getElementsByClassName('a1');
 	var oDiv = document.getElementsByClassName('div')[0];
 	var temp = 0;
@@ -1191,14 +1074,10 @@ window.onload = function(){
 		}
 	}
 }
-
-
-
-
 $().ready(function(){
 	$.ajax({
 		type:'post',
-		url:'PHP/api.php',
+		url:'php/api.php',
 		dataType:'json',
 		data:{status:'order',type:'getphone'},
 		success:function(res){
@@ -1215,7 +1094,7 @@ $().ready(function(){
 		var cp=$(".cp").val();
 		$.ajax({
 			type:'post',
-			url:'PHP/api.php',
+			url:'php/api.php',
 			dataType:'json',
 			data:{status:'order',type:'changepas',op:op,np:np,cp:cp},
 			success:function(pas){
@@ -1432,7 +1311,7 @@ $().ready(function(){
 		$('.logout').on("click",function(){
 			$.ajax({
 		        type: "post",
-		        url: 'PHP/api.php',
+		        url: 'php/api.php',
 		        dataType: 'json',
 		        data: {status:"logout"},
 		        success: function (data) {

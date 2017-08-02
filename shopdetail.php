@@ -54,11 +54,9 @@ session_start();
 #paging-wrapper li:nth-child(1) {
 	width: 50px;
 }
-
 #paging-wrapper li:nth-child(2) {
 	width: 66px;
 }
-
 #paging-wrapper li:nth-child(3) {
 	color: white;
 	background-color: rgba(0, 0, 0, .3);
@@ -89,7 +87,6 @@ ul li{
 	border-radius:50%;
 	border:3px solid #C8C8C8;
 }
-
 .liimg .title1{
 	height:70px;
 	width:240px;
@@ -154,8 +151,6 @@ ul li{
 	width:100%;
 	min-width:1350px;
 }
-
-
 /*中间头部，索引*/
 .middleTop{
 	max-width:735px;
@@ -167,7 +162,6 @@ ul li{
 	border:1px solid #C8C8C8;
 	background-color:white;
 }
-
 .middleTop ul li .span1{
 	line-height:40px;
 }
@@ -190,7 +184,6 @@ ul li{
 	border-top:10px solid #1e89e0;
 	background:url(images/icon1.png) no-repeat 50% 60%;
 }
-
 .middleTop ul li .a2{
 	display:block;
 	height:125px;
@@ -207,7 +200,6 @@ ul li{
 	border-top:10px solid #1e89e0;
 	background:url(images/icon2.png) no-repeat 50% 60%;
 }
-
 .middleTop ul li .a3{
 	display:block;
 	height:125px;
@@ -224,7 +216,6 @@ ul li{
 	border-top:10px solid #1e89e0;
 	background:url(images/icon3.png) no-repeat 50% 60%;
 }
-
 .middleTop ul li .a4{
 	display:block;
 	height:125px;
@@ -241,7 +232,6 @@ ul li{
 	border-top:10px solid #1e89e0;
 	background:url(images/icon4.png) no-repeat 50% 60%;
 }
-
 .middleTop ul li .a5{
 	display:block;
 	height:125px;
@@ -258,7 +248,6 @@ ul li{
 	border-top:10px solid #1e89e0;
 	background:url(images/icon5.png) no-repeat 50% 60%;
 }
-
 .middleTop ul li .a6{
 	display:block;
 	height:125px;
@@ -275,7 +264,6 @@ ul li{
 	border-top:10px solid #1e89e0;
 	background:url(images/yu.png) no-repeat 50% 60%;
 }
-
 .middleTop ul li .a7{
 	display:block;
 	height:125px;
@@ -298,23 +286,18 @@ ul li{
 	display:block;
 	color: #0066FF;
 }
-
 .p1{
 	font-size:12px;	
 }
-
 
 /* 菜品排版 */
 .middlehot1{
 	padding-top:140px;
 }
-
-
 .middleHot{
 	width:858px;
 	margin-left:9%;	
 }
-
 .middleHot .hot{
 	height:50px;
 	width:300px;
@@ -322,11 +305,9 @@ ul li{
 	line-height:50px;
 	font-size:26px;
 }
-
 .middleHot .hot span{
 	font-size:13px;
 }
-
 .middleHot .dish{
 	height:100px;
 	width:417px;
@@ -336,7 +317,6 @@ ul li{
 	border:1px solid #D0D0D0;
 	margin-right:5px;
 }
-
 .middleHot .dish .title{
 	height:50px;
 	width:310px;
@@ -355,7 +335,6 @@ ul li{
 	width:50px;
 	display:inline-block;
 }
-
 .middleHot .dish .price{
     position:absolute;
 	height:30px;
@@ -364,7 +343,6 @@ ul li{
 	margin-top:60px;
 	display:inline-block;
 }
-
 .middleHot .dish .price span{
 	height:20px;
 	width:20px;
@@ -374,29 +352,25 @@ ul li{
 	font-size:12px;
 	marign-right:5px;
 }
-
 .middleHot .dish .price .button{
-display: inline-block;
-border: 0;
-cursor: pointer;
-width: 90px;
-height: 26px;
-line-height: 26px;
-border-radius: 20px;
-text-align: center;
-margin-left:170px;
-	color:white;
-outline: 0;
-background-color:#0089dc;
+    display: inline-block;
+    border: 0;
+    cursor: pointer;
+    width: 90px;
+    height: 26px;
+    line-height: 26px;
+    border-radius: 20px;
+    text-align: center;
+    margin-left:170px;
+    color:#fff;
+    outline: 0;
+    background-color:#0089dc;
 }
 
-
 /* 商家公告 */
-
 .in1{
 	margin-top:10px;
 }
-
 .inform{
 	height:370px;
 	width:350px;
@@ -410,7 +384,6 @@ background-color:#0089dc;
 	width:350px;
 	background-color:#1e89e0;
 }
-
 .inform .informTop span{
 	line-height:40px;
 	font-size:20px;
@@ -487,7 +460,6 @@ background-color:#0089dc;
 	font-size:13px;
 	text-indent:37px;
 }
-
 .index{
 	width:100%;
 	min-width:1400px;
@@ -499,7 +471,7 @@ background-color:#0089dc;
 	width:100px;
 	height:40px;
 	margin-left:420px;
-	 cursor: pointer;
+	cursor: pointer;
 	text-align: center;
 	line-height:40px;
 }
@@ -511,19 +483,15 @@ background-color:#0089dc;
 	line-height:40px;
 }
 .index ul .indexLi2:before{
-position: absolute;
-left: 520px;
-top:32%;
-content: "  ";
-margin-top: -7px;
-height: 24px;
-width: 2px;
-background-color: #ccc;
+    position: absolute;
+    left: 520px;
+    top:32%;
+    content: "  ";
+    margin-top: -7px;
+    height: 24px;
+    width: 2px;
+    background-color: #ccc;
 }
-
-
-
-
 .middle1{
 	width:100%;
 	min-width:1350px;
@@ -534,14 +502,12 @@ background-color: #ccc;
 	margin-left:9%;
 	margin-top:10px;
 }
-
 .pingjia .pingjiaTop{
 	width:853px;
 	height:50px;
 	border-bottom:1px solid #eee;
 	background-color:#f6f6f6;
 }
-
 .pingjia .pingjiaTop ul li{
 	width:100px;
 	height:48px;
@@ -572,7 +538,6 @@ background-color: #ccc;
 	display:block;
     border-radius: 50%;
 }
-
 .pingjia .content ul li .liLeft{
 	width: 710px;
     height: 150px;
@@ -585,21 +550,19 @@ background-color: #ccc;
 	margin-top:10px;
 	display:inline-block;
 }
-
 .pingjia .content ul li .liLeft .ha h4{
 	margin-top:10px;
 }
 .pingjia .content ul li .liLeft .ha p{
 	display:inline-block;
 	font-size:14px;
-
 	text-indent: 10px;
 }
 .pa{
-color:#FFCC33;
+    color:#FFCC33;
 }
 .pb{
-color: 	#808080;
+    color:#808080;
 }
 .pingjia .content ul li .liLeft .ha img{
 	height:20px;
@@ -611,18 +574,14 @@ color: 	#808080;
 	margin-top:10px;
 	display:inline-block;
 }
-
 .pingjia .content ul li .liLeft .hb{
 	width: 690px;
     height: 50px;
 	border-top:1px solid #C8C8C8;
 }
-
 .pingjia .content ul li .liLeft .hb p{
 	margin-top:10px;
 }
-
-
 .starrating  b{
 	float: left;
 	width: 24px;
@@ -632,8 +591,6 @@ color: 	#808080;
 .starrating  .starnum{
 	background: url(images/stars.png) 0 0px no-repeat;
 }
-
-
 .starratingg  b{
 	float: left;
 	width: 14px;
@@ -643,11 +600,9 @@ color: 	#808080;
 .starratingg  .starnum{
 	background: url(images/starss.png) 0 0px no-repeat;
 }
-
 .footerLocal{
 	margin-top:800px;
 }
-
 </style>
 </head>
 <body>
@@ -724,25 +679,20 @@ color: 	#808080;
             </div>
         </div>
     </div><!-- 侧边栏结束 -->
-	
-	       
 			<div class="liimg" id="liimg">
 			   <img src="shop/1/images/shop.jpg" class="img1">
 			   <div class="title1">
                <h2 class="shop-name"></h2>
-	               <div class="starrating">
-	               
-	               </div>
+	               <div class="starrating"></div>
 	               <p class="shop-comment-count"></p>
 	               <p class="shop-sales"></p>
 			   </div> 
 			</div>   
-			
 			<div class="detail">
 	           <div class="detailLeft">
-	           <span class="span1">4.7</span>
-	           <span class="span2">综合评价</span>
-	           <span class="span3">高于周边商家55.5%</span>
+    	           <span class="span1">4.7</span>
+    	           <span class="span2">综合评价</span>
+    	           <span class="span3">高于周边商家55.5%</span>
 	           </div>
 	           <p class="shop-minimum-delivery-amount"></p>
 	           <p class="shop-delivery-cost"></p>
@@ -750,77 +700,53 @@ color: 	#808080;
 	           <p class="shop-adress"></p>
 	           <p class="shop-opening-hours"></p>
 	        </div>
-	        
-	        
-				 <div class="wrapperBox">
+				<div class="wrapperBox">
 				<div class="searchBox clearfix">
 					<i class="fa fa-search"></i>
 					<span></span><input id="change" class="searchInput input" placeholder="搜索商家/美食...">
 				</div>
 		     </div>
-		
 		<div class="classify"></div>
 		<div class="contentBox"></div>
 	</div>
-	
 	<div class="index">
 	<ul>
-	<li class="indexLi1">所有商品</li>
-	<li class="indexLi2">评价</li>
+    	<li class="indexLi1">所有商品</li>
+    	<li class="indexLi2">评价</li>
 	</ul>
 	</div>
-
-	
-	
-	
 	<div class="middle">
-	<div class="inform in1">
-	 <div class="informTop ">
-	   <span>商家公告</span>
-	   	 </div>
-	   	 <p class="shop_announcement"></p>
-	   	 
-	 <div class="informMiddle">
-	 <span>配送说明：</span>
-	 <span class="shop-delivery-cost"></span>
-	 </div>
-	 <button>举报商家</button>
+    	<div class="inform in1">
+             <div class="informTop ">
+               <span>商家公告</span>
+             </div>
+        	 <p class="shop_announcement"></p>	 
+        	 <div class="informMiddle">
+            	 <span>配送说明：</span>
+            	 <span class="shop-delivery-cost"></span>
+        	 </div>
+        	 <button>举报商家</button>
+    	</div>
+    		<div class="middleTop"  id="float_banner">	
+    			<ul id="navclassify"></ul>	
+    		</div>
+    	<div id="content" style="margin-top:138px"></div>	
 	</div>
-		<div class="middleTop"  id="float_banner">
-			
-			<ul id="navclassify">
-		
-			</ul>	
-		</div>
-		
-	<div id="content" style="margin-top:138px">	
-
-	
-	</div>
-	</div>
-	
-	
-	
 	<div class="middle1">
-	
-	<div class="pingjia">
-	<div class="pingjiaTop">
-	<ul>
-	<li>全部</li>
-	<li>满意</li>
-	<li>不满意</li>
-	</ul>
+    	<div class="pingjia">
+        	<div class="pingjiaTop">
+            	<ul>
+                	<li>全部</li>
+                	<li>满意</li>
+                	<li>不满意</li>
+            	</ul>
+        	</div>
+        	<div class="content">
+            	<ul id="pingjiacontent"></ul>
+            	<ul id="paging-wrapper"></ul>
+    	    </div>
+    	</div>
 	</div>
-	<div class="content">
-	<ul id="pingjiacontent">
-	
-	</ul>
-	<ul id="paging-wrapper"></ul>
-	</div>
-	</div>
-	</div>
-	
-	
 	<div class="footer footerLocal clearfix">
 		<div class="footerLinks help">
 			<h3 class="linksTitle">用户帮助</h3>
@@ -871,7 +797,7 @@ color: 	#808080;
     		$('.logout').on("click",function(){
     			$.ajax({
     		        type: "post",
-    		        url: 'PHP/api.php',
+    		        url: 'php/api.php',
     		        dataType: 'json',
     		        data: {status:"logout"},
     		        success: function (data) {
@@ -902,15 +828,9 @@ color: 	#808080;
 	float_banner_off=float_banner.offsetTop;//middleTop最开始离windowTop的高度
 	function scroll_ad(){
 	 scrollTop = document.documentElement.scrollTop+document.body.scrollTop;
-	 //console.log(document.documentElement.scrollTop);
 	 pos = scrollTop - float_banner_off;
-	 //console.log(scrollTop);
-	 //console.log(float_banner.offsetTop);
-	 //console.log(pos);
 	 pos = pos/10
 	 moveHeight = pos>0?Math.ceil(pos):Math.floor(pos);
-	 //console.log(moveHeight);
-	 //console.log(Math.ceil(pos));
 	 if(moveHeight>0){
 	  float_banner.style.top = document.body.scrollTop+document.documentElement.scrollTop-10+"px";
 	  setTimeout(scroll_ad,speed);
@@ -924,9 +844,9 @@ color: 	#808080;
 	$('.payment').on("click",function(){
 		$.ajax({
 	        type: "post",
-	        url: 'PHP/api.php',
+	        url: 'php/api.php',
 	        dataType: 'json',
-	        data: {status:"payment"},
+	        data: {status:"payment",type:"verification"},
 	        success: function (data) {
 	        	if(data['status'] === 2){
 	        		alert("请登录后再结算！")
@@ -934,7 +854,7 @@ color: 	#808080;
 	        	}else if(data['status'] === 3){
 	        		alert("购物是空的哦，快去选购一些食物吧！")
 	        	}else if(data['status'] === 1){
-	        	    window.location.href = "order.php"
+	        	    window.location.href = "balance.php"
 		        	}
 	        },
 	        error: function () {
@@ -946,7 +866,7 @@ color: 	#808080;
 	//获取购物车里的东西
 	$.ajax({
         type: "post",
-        url: 'PHP/api.php',
+        url: 'php/api.php',
         dataType: 'json',
         data: {status:"shopcart",type:"get"},
         success: function (data) {
@@ -972,7 +892,7 @@ color: 	#808080;
 		$(".chooseTitlecontent").html("")	
 		$.ajax({
 	        type: "post",
-	        url: 'PHP/api.php',
+	        url: 'php/api.php',
 	        dataType: 'json',
 	        data: {status:"shopcart",type:"delete"},
 	        success: function (data) {
@@ -1016,7 +936,7 @@ color: 	#808080;
 		//获取评论里的数据
 		$.ajax({
             type: "post",
-            url: 'PHP/api.php',
+            url: 'php/api.php',
             dataType: 'json',
             data: _data,
             success: function (data) {
@@ -1070,15 +990,6 @@ color: 	#808080;
 	});
 	
 	
-/* 	
-	$(".smooth").click(function(){
-		var href = $(this).attr("href");
-		var pos = $(href).offset().top;
-		$("html,body").animate({scrollTop: pos}, 1000);	
-		return false;
-	}); */
-	
-	
 	window.onload=function(){
 	    var aA=document.getElementsByClassName('input');
 		for(var i=0; i<aA.length; i++){
@@ -1112,7 +1023,7 @@ color: 	#808080;
 	//商家信息
 	$.ajax({
         type: "post",
-        url: 'PHP/api.php',
+        url: 'php/api.php',
         dataType: 'json',
         data:{status:"shopdata"},
         success: function (data) {
@@ -1167,7 +1078,7 @@ color: 	#808080;
 				
 		$.ajax({
 	        type: "post",
-	        url: 'PHP/api.php',
+	        url: 'php/api.php',
 	        dataType: 'json',
 	        data:{status:"food"},
 	        success: function (data) {
@@ -1264,7 +1175,7 @@ color: 	#808080;
 
 					$.ajax({
 						type: "post",
-						url: 'PHP/api.php',
+						url: 'php/api.php',
 						dataType: 'json',
 						data: {status: "shopcart", type: "insert", data: food},
 						success: function (data) {
@@ -1299,7 +1210,6 @@ color: 	#808080;
            console.log("error")
         }
     })
-
 	</script>
 
     <script src="js/sidebar.js"></script>

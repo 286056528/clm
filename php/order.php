@@ -12,8 +12,47 @@ class Order{
     public $order_total_prices = 0;  //订单总额
     public $order_status = 0;  //订单状态  1：表示订单未签收 0：表示订单已签收
     public $order_time = 0;  //订单时间
+    public $order_u_phone = "";  //用户手机号
+    public $order_u_address = "";   //用户地址
+    public $order_u_name = "";  //用戶名稱
     public $order_rating_count = 0;
 
+    
+    /**
+     * @return the $order_u_name
+     */
+    public function getOrder_u_name()
+    {
+        return $this->order_u_name;
+    }
+
+ /**
+     * @param string $order_u_name
+     */
+    public function setOrder_u_name($order_u_name)
+    {
+        $this->order_u_name = $order_u_name;
+    }
+
+ public function getOrder_u_address()
+    {
+        return $this->order_u_phone;
+    }
+    
+    public function setOrder_u_address($order_u_address)
+    {
+        $this->order_u_address = $order_u_address;
+    }
+    
+    public function getOrder_u_phone()
+    {
+        return $this->order_u_phone;
+    }
+    
+    public function setOrder_u_phone($order_u_phone)
+    {
+        $this->order_u_phone = $order_u_phone;
+    }
  /**
      * @return the $order_rating_count
      */

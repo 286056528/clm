@@ -438,9 +438,9 @@ function showtext(){
     	$('.payment').on("click",function(){
     		$.ajax({
     	        type: "post",
-    	        url: 'PHP/api.php',
+    	        url: 'php/api.php',
     	        dataType: 'json',
-    	        data: {status:"payment"},
+    	        data: {status:"payment",type:"verification"},
     	        success: function (data) {
     	        	if(data['status'] === 2){
     	        		alert("请登录后再结算！")
@@ -448,7 +448,7 @@ function showtext(){
     	        	}else if(data['status'] === 3){
     	        		alert("购物是空的哦，快去选购一些食物吧！")
     	        	}else if(data['status'] === 1){
-	        	    window.location.href = "order.php"
+	        	    window.location.href = "balance.php"
 		        	}
     	        },
     	        error: function () {
@@ -461,7 +461,7 @@ function showtext(){
     	var sum = 0
     	$.ajax({
             type: "post",
-            url: 'PHP/api.php',
+            url: 'php/api.php',
             dataType: 'json',
             data: {status:"shopcart",type:"get"},
             success: function (data) {
@@ -486,7 +486,7 @@ function showtext(){
 		$(".clear").on("click",function(){
 			$.ajax({
 		        type: "post",
-		        url: 'PHP/api.php',
+		        url: 'php/api.php',
 		        dataType: 'json',
 		        data: {status:"shopcart",type:"delete"},
 		        success: function (data) {
@@ -527,7 +527,7 @@ function showtext(){
         	
         	$.ajax({
                 type: "post",
-                url: 'PHP/api.php',
+                url: 'php/api.php',
                 dataType: 'json',
                 data: _data,
                 success: function (data) {
@@ -535,7 +535,7 @@ function showtext(){
         			var html = "";
         			console.log(data.length)
                    for(var i = 0;i <data.length - 1;i++){
-        				html += "<a href='PHP/api.php?status=indextoshop&id="+data[i].shop_id+"'"+
+        				html += "<a href='php/api.php?status=indextoshop&id="+data[i].shop_id+"'"+
         								"class='resBox clearfix'>"+
         								"<div class='restaurantLogo'>"+
         								"<img alt='"+data[i].shop_name+"' src='"+data[i].shop_img_path+"'>"+
@@ -630,7 +630,7 @@ function showtext(){
 		$('.logout').on("click",function(){
 			$.ajax({
 		        type: "post",
-		        url: 'PHP/api.php',
+		        url: 'php/api.php',
 		        dataType: 'json',
 		        data: {status:"logout"},
 		        success: function (data) {

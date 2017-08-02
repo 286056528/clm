@@ -4,6 +4,7 @@ require 'shop.php';
 require 'comment.php';
 require 'user.php';
 require 'order.php';
+require 'address.php';
 class SqlOperation
 {
 
@@ -117,6 +118,9 @@ class SqlOperation
             $temp->setOrder_time($array['order_time']);
             $temp->setOrder_status($array['order_status']);
             $temp->setOrder_rating_count($array['order_rating_count']);
+            $temp->setOrder_u_phone($array['u_phone']);
+            $temp->setOrder_u_address($array['u_address']);
+            $temp->setOrder_u_name($array['u_name']);
             array_push($result_array, $temp);
         }
         return $result_array;
@@ -160,6 +164,22 @@ class SqlOperation
         return $result_array ;
     }
     
+    //获取地址
+    function getAddressData($sql){
+        $result_array = array();
+        $result = $this->mysqli->query($sql);
+        while ($array = $result->fetch_assoc()){
+            $temp = new Address();
+            $temp->setAddress_id($array['id']);
+            $temp->setAddress_name($array['name']);
+            $temp->setAddress_phone($array['Rphone']);
+            $temp->setAddress_content($array['address']);
+            array_push($result_array, $temp);
+        }
+        return $result_array;
+    }
+    
+    
     //修改数据表中的数据
     function updateData($sql){
         return $this->mysqli->query($sql);
@@ -175,6 +195,12 @@ class SqlOperation
         return $this->mysqli->query($sql);
     }
     
+    //获取数据表中的行数
+    function getRows($sql){
+        $result = $this->mysqli->query($sql);
+        $num = $result->num_rows;
+        return $num;
+    }
     
     function getphone($sql){
         $res= $this->mysqli->query($sql);

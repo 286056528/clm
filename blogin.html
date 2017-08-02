@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>吃了么_登陆</title>
-	<link rel="stylesheet" href="css/login.css">
+	<title>吃了么_商家登陆</title>
+	<link rel="stylesheet" href="css/blogin.css">
 	<link rel="shortcut icon" href="favicon.ico">
 </head>
 <body >
@@ -11,17 +11,30 @@
 	       <img id="bg" src="images/bg4.jpg" alt="背景" title="刺果">
       </div>
       <div class="head">
-	  <div>
-		<img src="images/eat.png" alt="吃了吗">
-		<img src="images/title-20.png" alt="让外卖，送的快">
-	  </div>
-
-      </div>
-       <div class="content">
+		<p>加入吃了么，赚大钱 </p>
+	 </div>
+	 <div class="font1">
+	  <p>24<a>小时</a></p>
+	  <b>极速开店</b>
+	<div class="font2">
+	<p>900<a>万</a></p>
+	  <b>每日订单</b>
+	</div>
+	<div class="font3">
+	<p>700<a>城市</a></p>
+	  <b>全国覆盖</b>
+	</div>
+	 </div>
+	 <div class="buttonsq">
+	   <input type="button" id="joinSubmit"  value="加入我们" />
+	 </div>
+       <div class="content"  style="display: none;">
 	   <div class="box">
-		<span id="login" >账号登陆</span>
-		<span id="sign" >手机注册</span>
-		<div id="loginDiv" style="display: block;">
+		<span id="login" >商家登陆</span>
+		<span id="sign" >商家注册</span>
+
+
+		<div id="loginDiv" style="display: none;">
 			<form action="" class="box" >
 				<div class="item ">
 					<input type="text" id="username" class="inputBox1" value=""  placeholder="请输入账户">
@@ -41,7 +54,7 @@
 		</div>
 
 		<div id="signDiv" style="display:none;">
-			 <form action="PHP/register.php" class="box" method="post">
+			 <form action="PHP/registerAction.php" class="box" method="post">
 				<div class="item">
 					<div class="username">
 						<input type="text"  class="inputBox2" value="" name="phone"  placeholder="选请输入你的手机号码">
@@ -66,42 +79,16 @@
 				</div>
 			 </form>
 			  <div class="ohter">
-				<a href="#">注册协议</a>
+				<a href="#">商家注册协议</a>
 			  </div>
 		    </div>
 	        </div>
         </div>
 		<div class="introduce">
-
-			<div class="part">
-				<div class="centerBox">
-					<h2>随时随地 点你喜欢</h2>
-					<p class="say_something">
-						覆盖涪陵本地优质外卖商家、快餐和特色美食，当然也有家常小菜，
-						</br>
-						干锅汤锅麻辣香锅，小吃烧烤奶茶，总有你喜欢。
-					</p>
-					<img src="images/introduce_pic1.jpg" alt="">
-				</div>
-
-				<div class="centerBox centerBox_color">
-					<h2>加入我们 让生活更轻松</h2>
-					<p class="say_something">
-						你还在为每天每个饭点焦虑吃什么的问题而烦恼吗，上吃了吗，
-						</br>
-						总有你更多的选择！
-					</p>
-					<div class="introduce_pic">
-						<img src="images/introduce_pic2.jpg" alt="">
-						<img src="images/erweima.png" alt="">
-					</div>
-				</div>
-			</div>
-
 			<div class="footer">
 				<div class="centerBox">
 					<p>
-						<a href="blogin.html">加入我们</a>
+						<a href="#">加入我们</a>
 						<a href="#">联系我们</a>
 					</p>	
 					<p>技术支持Team.S&nbsp;&nbsp;copyright&copy&nbsp;2004-2017&nbsp;&nbsp;Team.S 版权所有</p>
@@ -131,7 +118,7 @@
                     $('.b2').html('输入不能为空'); 
                 }
                 else{
-                	$.post("php/api.php",{status:'login',phone:userNameValue,password:passwordValue},function (re) {
+                	$.post("php/loginAction.php",{bphone:userNameValue,bpassword:passwordValue},function (re) {
     					
     					switch(re.sta){
     					case 0: 
@@ -152,8 +139,8 @@
 					            $('.b2').css('color','green');
 					            $('.b1').html(re.msg1);
 	                            $('.b2').html(re.msg2);
-	                            
-	                            window.location.href='index.php';
+
+	                            window.location.href='shop.php';
 	                            break;
 	                    default: 
 	                    	    console.log(re);
@@ -164,6 +151,13 @@
                 }
 			}
         });
+    
+		$('#joinSubmit').click(function () {
+	        $('.content').show();
+	        $('#loginDiv').show();
+	        $('#signDiv').hide();
+	    })
+
     $('#login').click(function () {
         $('#loginDiv').show();
         $('#signDiv').hide();
@@ -172,5 +166,7 @@
         $('#loginDiv').hide();
         $('#signDiv').show();
     })
+    
+
 </script>
 </html>

@@ -7,7 +7,7 @@ ul{list-style:none;}
 .clear:after{clear:both;display:block;height:0px;content:'';zoom:1;overflow:hidden;}
 .clearfix{clear:both;zoom:1;}
 .clearfix:after{display:block;overflow:hidden;clear:both;height:0;visibility:hidden;content:""}
-body{background:#eee !important;font-family: 'Microsoft YaHei','Open Sans', 'trebuchet ms', arial, sans-serif;}
+body{background:#eee;font-family: 'Microsoft YaHei','Open Sans', 'trebuchet ms', arial, sans-serif;}
 /*顶部nav topBar*/
 .topBarNav,.topBarNavLogin,.topBarList{
 	display:inline-block;
@@ -446,6 +446,7 @@ body{background:#eee !important;font-family: 'Microsoft YaHei','Open Sans', 'tre
 .footer h3{
 	font-weight:400;
 	font-size:16px;
+    margin-top:5px !important;
 }
 .footer a{
 	color:#999;
@@ -457,7 +458,6 @@ body{background:#eee !important;font-family: 'Microsoft YaHei','Open Sans', 'tre
 .footerLinks{
 	width:15%;
 	float:left;
-	margin-top:10px !important;
 }
 .footerLinks,.footerContect{
 	display:inline-block;

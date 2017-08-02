@@ -16,12 +16,147 @@ a{
 }
 .head{
 	/*position: fixed;*/
-	width:340px;
+	width:440px;
 	height:auto;
 	/*margin-left: 100px;*/
 	margin:0 auto;
-	margin-top:100px;
+	margin-top:50px;
 }
+
+.head p{
+ font-size:40px;
+ text-align:center;
+ color:#fff;
+ font-family:"华文行楷";
+}
+
+.font1{
+	float:left;
+	width:25%;
+	height:200px;
+	margin-left:150px;
+	margin-top:0px;
+	display:inline-block;
+}
+
+.font1 p{
+	font-size:70px;
+    color:#FFFF37;
+    font-family:"宋体";
+	display:inline-block;
+}
+
+.font1 p a{
+	font-size:20px;
+    color:#FFFF37;
+    font-family:"宋体";
+}
+
+.font1 b{
+	position:relative;
+	top:150px;
+	font-size:16px;
+    color:#ffff;
+    font-family:"宋体";
+	float:left;
+	claer:both;
+	left:80px;
+}
+
+.font2{
+	position:absolute;
+	top:135px;
+	clear:both;
+	width:25%;
+	height:200px;
+	margin-left:350px;
+	
+}
+
+.font2 p{
+	font-size:70px;
+    color:#FFFF37;
+    font-family:"宋体";
+	display:inline-block;
+}
+
+.font2 p a{
+	font-size:20px;
+    color:#FFFF37;
+    font-family:"宋体";
+}
+
+.font2 b{
+	position:relative;
+	top:150px;
+	font-size:16px;
+    color:#ffff;
+    font-family:"宋体";
+	float:left;
+	claer:both;
+	left:85px;
+}
+
+.font3{
+	position:absolute;
+	top:135px;
+	clear:both;
+	width:25%;
+	height:200px;
+	margin-left:700px;
+	
+}
+
+.font3 p{
+	font-size:70px;
+    color:#FFFF37;
+    font-family:"宋体";
+	display:inline-block;
+}
+
+.font3 p a{
+	font-size:20px;
+    color:#FFFF37;
+    font-family:"宋体";
+}
+
+
+.font3 b{
+	position:relative;
+	top:150px;
+	font-size:16px;
+    color:#ffff;
+    font-family:"宋体";
+	float:left;
+	claer:both;
+	left:90px;
+}
+
+.buttonsq{
+	position:absolute;
+	top:350px;
+	clear:both;
+	width:25%;
+	height:200px;
+	margin-left:500px;
+	
+}
+
+.buttonsq input{
+	width:230px;
+	height:38px;
+	margin-top:30px;
+	background-color:transparent;
+	color: #FFFFFF;
+	font-size:25px;
+	border:none;
+}
+
+.buttonsq input:hover{
+	color: #95CACA;
+	
+}
+
 
 .bgChange {
 	position: absolute;
